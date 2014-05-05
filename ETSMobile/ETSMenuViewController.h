@@ -16,6 +16,7 @@ typedef NS_ENUM(NSUInteger, ETSPaneViewControllerType) {
     ETSPaneViewControllerTypeCourses,
     ETSPaneViewControllerTypeProfile,
     ETSPaneViewControllerTypeMoodle,
+    ETSPaneViewControllerTypeInternship,
     ETSPaneViewControllerTypeBandwidth,
     ETSPaneViewControllerTypeNews,
     ETSPaneViewControllerTypeDirectory,

@@ -65,6 +65,7 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
                                            @(ETSPaneViewControllerTypeComment)      : NSLocalizedString(@"Problème ou commentaire?", nil),
                                            @(ETSPaneViewControllerTypeCourses)      : NSLocalizedString(@"Notes", nil),
                                            @(ETSPaneViewControllerTypeDirectory)    : NSLocalizedString(@"Bottin", nil),
+                                           @(ETSPaneViewControllerTypeInternship)   : NSLocalizedString(@"Stages", nil),
                                            @(ETSPaneViewControllerTypeLibrary)      : NSLocalizedString(@"Bibliothèque", nil),
                                            @(ETSPaneViewControllerTypeMoodle)       : NSLocalizedString(@"Moodle", nil),
                                            @(ETSPaneViewControllerTypeNews)         : NSLocalizedString(@"Actualités", nil),
@@ -81,6 +82,7 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
                                            @(ETSPaneViewControllerTypeComment)      : [UIImage imageNamed:@"ico_comment"],
                                            @(ETSPaneViewControllerTypeCourses)      : [UIImage imageNamed:@"ico_notes"],
                                            @(ETSPaneViewControllerTypeDirectory)    : [UIImage imageNamed:@"ico_bottin"],
+                                           @(ETSPaneViewControllerTypeInternship)   : [UIImage imageNamed:@"ico_stage"],
                                            @(ETSPaneViewControllerTypeLibrary)      : [UIImage imageNamed:@"ico_library"],
                                            @(ETSPaneViewControllerTypeMoodle)       : [UIImage imageNamed:@"ico_moodle"],
                                            @(ETSPaneViewControllerTypeNews)         : [UIImage imageNamed:@"ico_news"],
@@ -97,6 +99,7 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
                                            @(ETSPaneViewControllerTypeComment)      : @"CommentViewController",
                                            @(ETSPaneViewControllerTypeCourses)      : @"CoursesViewController",
                                            @(ETSPaneViewControllerTypeDirectory)    : @"DirectoryViewController",
+                                           @(ETSPaneViewControllerTypeInternship)   : @"InternshipViewController",
                                            @(ETSPaneViewControllerTypeLibrary)      : @"WebViewController",
                                            @(ETSPaneViewControllerTypeMoodle)       : @"MoodleViewController",
                                            @(ETSPaneViewControllerTypeNews)         : @"NewsViewController",
@@ -117,7 +120,7 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     switch (section) {
-        case 0: return 5;
+        case 0: return 6;
         case 1: return 5;
         case 2: return 3;
         default: return 0;

@@ -56,6 +56,9 @@
 		266F0B7218F4EF22000F53C1 /* PERSONNE_ARMEE_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6A18F4EF22000F53C1 /* PERSONNE_ARMEE_2009-04-01.pdf */; };
 		266F0B7318F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6B18F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf */; };
 		2670C01018F35EED00A4B0D6 /* SecuritySources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2670C00F18F35EED00A4B0D6 /* SecuritySources.plist */; };
+		268400B8190B07AE0008E3B6 /* ETSInternshipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 268400B7190B07AE0008E3B6 /* ETSInternshipViewController.m */; };
+		268400BB190B12FA0008E3B6 /* ETSInternship.m in Sources */ = {isa = PBXBuildFile; fileRef = 268400BA190B12FA0008E3B6 /* ETSInternship.m */; };
+		268400BE190B164F0008E3B6 /* ETSInternshipDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 268400BD190B164F0008E3B6 /* ETSInternshipDetailsViewController.m */; };
 		26887B7218F090C500009EBA /* ETSRadioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7118F090C500009EBA /* ETSRadioCell.m */; };
 		26887B7718F1BA5800009EBA /* ETSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7618F1BA5800009EBA /* ETSAboutViewController.m */; };
 		26887B7B18F1D36600009EBA /* ETSSponsorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7A18F1D36600009EBA /* ETSSponsorsViewController.m */; };
@@ -219,6 +222,12 @@
 		266F0B6A18F4EF22000F53C1 /* PERSONNE_ARMEE_2009-04-01.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "PERSONNE_ARMEE_2009-04-01.pdf"; sourceTree = "<group>"; };
 		266F0B6B18F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "URGENCE_MEDICALE_2009-04-01.pdf"; sourceTree = "<group>"; };
 		2670C00F18F35EED00A4B0D6 /* SecuritySources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SecuritySources.plist; sourceTree = "<group>"; };
+		268400B6190B07AE0008E3B6 /* ETSInternshipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSInternshipViewController.h; sourceTree = "<group>"; };
+		268400B7190B07AE0008E3B6 /* ETSInternshipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSInternshipViewController.m; sourceTree = "<group>"; };
+		268400B9190B12FA0008E3B6 /* ETSInternship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSInternship.h; sourceTree = "<group>"; };
+		268400BA190B12FA0008E3B6 /* ETSInternship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSInternship.m; sourceTree = "<group>"; };
+		268400BC190B164F0008E3B6 /* ETSInternshipDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSInternshipDetailsViewController.h; sourceTree = "<group>"; };
+		268400BD190B164F0008E3B6 /* ETSInternshipDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSInternshipDetailsViewController.m; sourceTree = "<group>"; };
 		26887B7018F090C500009EBA /* ETSRadioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSRadioCell.h; sourceTree = "<group>"; };
 		26887B7118F090C500009EBA /* ETSRadioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRadioCell.m; sourceTree = "<group>"; };
 		26887B7518F1BA5800009EBA /* ETSAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSAboutViewController.h; sourceTree = "<group>"; };
@@ -491,6 +500,17 @@
 			name = Procedures;
 			sourceTree = "<group>";
 		};
+		268400B5190B07940008E3B6 /* Internship */ = {
+			isa = PBXGroup;
+			children = (
+				268400B6190B07AE0008E3B6 /* ETSInternshipViewController.h */,
+				268400B7190B07AE0008E3B6 /* ETSInternshipViewController.m */,
+				268400BC190B164F0008E3B6 /* ETSInternshipDetailsViewController.h */,
+				268400BD190B164F0008E3B6 /* ETSInternshipDetailsViewController.m */,
+			);
+			name = Internship;
+			sourceTree = "<group>";
+		};
 		26887B6E18F0908600009EBA /* Radio */ = {
 			isa = PBXGroup;
 			children = (
@@ -723,6 +743,8 @@
 				1DBF6C6819A507EA00761C44 /* ETSNewsSource.m */,
 				1D25DD8719A3E63B00C71387 /* ETSNews.h */,
 				1D25DD8819A3E63B00C71387 /* ETSNews.m */,
+				268400B9190B12FA0008E3B6 /* ETSInternship.h */,
+				268400BA190B12FA0008E3B6 /* ETSInternship.m */,
 				26AF7CF418FB499200BD3982 /* ETSMoodleCourse.h */,
 				26AF7CF518FB499200BD3982 /* ETSMoodleCourse.m */,
 				26AF7CFD18FB8A0000BD3982 /* ETSMoodleElement.h */,
@@ -759,6 +781,7 @@
 				1D29A45D188DB80800CF02EB /* Comment */,
 				269BFF591814C627005D2950 /* Courses */,
 				2693168518359ECA00DE95A0 /* Directory */,
+				268400B5190B07940008E3B6 /* Internship */,
 				D15F4AE1183992A10034605B /* Profile */,
 				26DD92EC17EA622D00469FA8 /* News */,
 				26F46A9D183ED0EE00232B5A /* Radio */,
@@ -1041,6 +1064,7 @@
 				26F46A9C183ED0E200232B5A /* ETSRadioViewController.m in Sources */,
 				2610879E18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m in Sources */,
 				26DEB74C18E9F2C000161421 /* ETSCalendar.m in Sources */,
+				268400BE190B164F0008E3B6 /* ETSInternshipDetailsViewController.m in Sources */,
 				26DEB88C18EC97EC00161421 /* MSDayColumnHeaderBackground.m in Sources */,
 				26BB373018F5E77E002CE5DD /* ETSCoursesViewController_iPad.m in Sources */,
 				26DD92C317EA610D00469FA8 /* ETSMobile.xcdatamodeld in Sources */,
@@ -1067,7 +1091,7 @@
 				1DBF6C6919A507EA00761C44 /* ETSNewsSource.m in Sources */,
 				2664F1E318FF2FCC0054BF58 /* ETSMenuCell.m in Sources */,
 				264ACF4F18DCDE0100928284 /* ETSSynchronization.m in Sources */,
-				1D25DD8319A3C95900C71387 /* ETSNewsViewController.m in Sources */,
+				268400B8190B07AE0008E3B6 /* ETSInternshipViewController.m in Sources */,
 				26EF269818E612B8001D3454 /* ETSCollectionViewController.m in Sources */,
 				1D29A464188DB9E500CF02EB /* ETSCommentCell.m in Sources */,
 				2698C6FA182834E000F6281F /* ETSCourseCell.m in Sources */,
@@ -1077,6 +1101,7 @@
 				269BFF5C1814C649005D2950 /* ETSCoursesViewController.m in Sources */,
 				26AF7CF618FB499200BD3982 /* ETSMoodleCourse.m in Sources */,
 				26AF7CFF18FB8A0000BD3982 /* ETSMoodleElement.m in Sources */,
+				268400BB190B12FA0008E3B6 /* ETSInternship.m in Sources */,
 				263A4C421889D83000E38CAC /* ETSNewsDetailsViewController.m in Sources */,
 				1D29A460188DB82400CF02EB /* ETSCommentViewController.m in Sources */,
 				26DEB88F18EC97EC00161421 /* MSTimeRowHeader.m in Sources */,

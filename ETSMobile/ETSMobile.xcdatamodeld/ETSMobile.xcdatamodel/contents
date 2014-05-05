@@ -73,6 +73,20 @@
         <attribute name="start" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Internship" representedClassName="ETSInternship" syncable="YES">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="created" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="employer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="employerDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="employerType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="end" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="MoodleCourse" representedClassName="ETSMoodleCourse" syncable="YES">
         <attribute name="acronym" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fullname" optional="YES" attributeType="String" syncable="YES"/>
@@ -151,6 +165,10 @@
         <element name="Course" positionX="0" positionY="0" width="128" height="300"/>
         <element name="Evaluation" positionX="0" positionY="0" width="128" height="225"/>
         <element name="Event" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="Internship" positionX="9" positionY="153" width="128" height="225"/>
+        <element name="MoodleCourse" positionX="9" positionY="153" width="128" height="163"/>
+        <element name="MoodleElement" positionX="18" positionY="162" width="128" height="178"/>
+        <element name="News" positionX="0" positionY="0" width="128" height="150"/>
         <element name="MoodleCourse" positionX="9" positionY="153" width="128" height="163"/>
         <element name="MoodleElement" positionX="18" positionY="162" width="128" height="178"/>
         <element name="News" positionX="0" positionY="0" width="128" height="180"/>
