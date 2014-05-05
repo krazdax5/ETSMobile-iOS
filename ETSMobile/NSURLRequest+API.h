@@ -12,6 +12,7 @@
 @interface NSURLRequest (API)
 + (id)requestForCourses;
 + (id)requestForProfile;
++ (id)requestForInternship;
 + (id)requestForProgram;
 + (id)requestForCalendar:(NSString *)session;
 + (id)requestForSession;

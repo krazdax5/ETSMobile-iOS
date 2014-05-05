@@ -2,6 +2,31 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Internship</key>
+	<dict>
+		<key>id</key>
+		<string>id</string>
+		<key>city</key>
+		<string>city</string>
+		<key>favorite</key>
+		<string>favorite</string>
+		<key>longitude</key>
+		<string>longitude</string>
+		<key>latitude</key>
+		<string>latitude</string>
+		<key>employer</key>
+		<string>employer</string>
+		<key>employerDescription</key>
+		<string>employerDescription</string>
+		<key>employerType</key>
+		<string>employerType</string>
+		<key>title</key>
+		<string>title</string>
+		<key>created</key>
+		<string>created</string>
+		<key>summary</key>
+		<string>summary</string>
+	</dict>
 	<key>MoodleElement</key>
 	<dict>
 		<key>visible</key>

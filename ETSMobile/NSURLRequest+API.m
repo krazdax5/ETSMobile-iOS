@@ -49,6 +49,11 @@
     return [self requestWithUsernameAndPassword:[NSURL URLForProfile]];
 }
 
++ (id)requestForInternship
+{
+    return [self requestWithUsernameAndPassword:[NSURL URLForInternship]];
+}
+
 + (id)requestForProgram
 {
     return [self requestWithUsernameAndPassword:[NSURL URLForProgram]];
