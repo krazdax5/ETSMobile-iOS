@@ -29,8 +29,36 @@
     synchronization.objectsKeyPath = @"";
     self.synchronization = synchronization;
     self.synchronization.delegate = self;
+    self.synchronization.ignoredAttributes = @[@"favorite"];
     
     self.cellIdentifier = @"InternshipIdentifier";
+    /*
+    NSArray *a = @[@{@"id" : @(1),
+                     @"city" : @"Montreal",
+                     @"favorite" : @(0),
+                     @"longitude" : @(0),
+                     @"latitude" : @(0),
+                     @"employer" : @"ETS",
+                     @"employerDescription" : @"Lorem ipsum",
+                     @"employerType" : @"PME",
+                     @"title" : @"Programmeur",
+                     @"created" : @"2014-05-01",
+                     @"Summary" : @"blabla"},
+                   @{@"id" : @(2),
+                     @"city" : @"Montreal",
+                     @"favorite" : @(0),
+                     @"longitude" : @(0),
+                     @"latitude" : @(0),
+                     @"employer" : @"ETS",
+                     @"employerDescription" : @"Lorem ipsum",
+                     @"employerType" : @"PME",
+                     @"title" : @"Programmeur",
+                     @"created" : @"2014-05-01",
+                     @"Summary" : @"blabla"}
+                   ];
+    
+    NSLog(@"%@", [NSString stringWithUTF8String:[[NSJSONSerialization dataWithJSONObject:a options:NSJSONWritingPrettyPrinted error:nil] bytes]]);
+     */
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -56,9 +84,12 @@
 	return _fetchedResultsController;
 }
 
+
+
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     ETSInternship *internship = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
     cell.textLabel.text = internship.employer;
     cell.detailTextLabel.text = internship.title;
 }
