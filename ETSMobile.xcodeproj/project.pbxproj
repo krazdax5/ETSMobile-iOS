@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		262DD99319D08FB500FCAA03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262DD99219D08FB500FCAA03 /* AppDelegate.swift */; };
+		262DD99619D08FB500FCAA03 /* ETSMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 262DD99419D08FB500FCAA03 /* ETSMobile.xcdatamodeld */; };
+		262DD99819D08FB500FCAA03 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262DD99719D08FB500FCAA03 /* MasterViewController.swift */; };
+		262DD99A19D08FB500FCAA03 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262DD99919D08FB500FCAA03 /* DetailViewController.swift */; };
+		262DD99D19D08FB500FCAA03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262DD99B19D08FB500FCAA03 /* Main.storyboard */; };
+		262DD99F19D08FB500FCAA03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 262DD99E19D08FB500FCAA03 /* Images.xcassets */; };
+		262DD9A219D08FB500FCAA03 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 262DD9A019D08FB500FCAA03 /* LaunchScreen.xib */; };
+		262DD9AE19D08FB500FCAA03 /* ETSMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262DD9AD19D08FB500FCAA03 /* ETSMobileTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		262DD9A819D08FB500FCAA03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 262DD98519D08FB500FCAA03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 262DD98C19D08FB500FCAA03;
+			remoteInfo = ETSMobile;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		262DD98D19D08FB500FCAA03 /* ETSMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETSMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		262DD99119D08FB500FCAA03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		262DD99219D08FB500FCAA03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		262DD99519D08FB500FCAA03 /* ETSMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ETSMobile.xcdatamodel; sourceTree = "<group>"; };
+		262DD99719D08FB500FCAA03 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		262DD99919D08FB500FCAA03 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		262DD99C19D08FB500FCAA03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		262DD99E19D08FB500FCAA03 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		262DD9A119D08FB500FCAA03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		262DD9A719D08FB500FCAA03 /* ETSMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ETSMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		262DD9AC19D08FB500FCAA03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		262DD9AD19D08FB500FCAA03 /* ETSMobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETSMobileTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		262DD98A19D08FB500FCAA03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		262DD9A419D08FB500FCAA03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		262DD98419D08FB500FCAA03 = {
+			isa = PBXGroup;
+			children = (
+				262DD98F19D08FB500FCAA03 /* ETSMobile */,
+				262DD9AA19D08FB500FCAA03 /* ETSMobileTests */,
+				262DD98E19D08FB500FCAA03 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		262DD98E19D08FB500FCAA03 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				262DD98D19D08FB500FCAA03 /* ETSMobile.app */,
+				262DD9A719D08FB500FCAA03 /* ETSMobileTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		262DD98F19D08FB500FCAA03 /* ETSMobile */ = {
+			isa = PBXGroup;
+			children = (
+				262DD99219D08FB500FCAA03 /* AppDelegate.swift */,
+				262DD99719D08FB500FCAA03 /* MasterViewController.swift */,
+				262DD99919D08FB500FCAA03 /* DetailViewController.swift */,
+				262DD99B19D08FB500FCAA03 /* Main.storyboard */,
+				262DD99E19D08FB500FCAA03 /* Images.xcassets */,
+				262DD9A019D08FB500FCAA03 /* LaunchScreen.xib */,
+				262DD99419D08FB500FCAA03 /* ETSMobile.xcdatamodeld */,
+				262DD99019D08FB500FCAA03 /* Supporting Files */,
+			);
+			path = ETSMobile;
+			sourceTree = "<group>";
+		};
+		262DD99019D08FB500FCAA03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				262DD99119D08FB500FCAA03 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		262DD9AA19D08FB500FCAA03 /* ETSMobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				262DD9AD19D08FB500FCAA03 /* ETSMobileTests.swift */,
+				262DD9AB19D08FB500FCAA03 /* Supporting Files */,
+			);
+			path = ETSMobileTests;
+			sourceTree = "<group>";
+		};
+		262DD9AB19D08FB500FCAA03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				262DD9AC19D08FB500FCAA03 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		262DD98C19D08FB500FCAA03 /* ETSMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 262DD9B119D08FB500FCAA03 /* Build configuration list for PBXNativeTarget "ETSMobile" */;
+			buildPhases = (
+				262DD98919D08FB500FCAA03 /* Sources */,
+				262DD98A19D08FB500FCAA03 /* Frameworks */,
+				262DD98B19D08FB500FCAA03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ETSMobile;
+			productName = ETSMobile;
+			productReference = 262DD98D19D08FB500FCAA03 /* ETSMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		262DD9A619D08FB500FCAA03 /* ETSMobileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 262DD9B419D08FB500FCAA03 /* Build configuration list for PBXNativeTarget "ETSMobileTests" */;
+			buildPhases = (
+				262DD9A319D08FB500FCAA03 /* Sources */,
+				262DD9A419D08FB500FCAA03 /* Frameworks */,
+				262DD9A519D08FB500FCAA03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				262DD9A919D08FB500FCAA03 /* PBXTargetDependency */,
+			);
+			name = ETSMobileTests;
+			productName = ETSMobileTests;
+			productReference = 262DD9A719D08FB500FCAA03 /* ETSMobileTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		262DD98519D08FB500FCAA03 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = ApplETS;
+				TargetAttributes = {
+					262DD98C19D08FB500FCAA03 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					262DD9A619D08FB500FCAA03 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 262DD98C19D08FB500FCAA03;
+					};
+				};
+			};
+			buildConfigurationList = 262DD98819D08FB500FCAA03 /* Build configuration list for PBXProject "ETSMobile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 262DD98419D08FB500FCAA03;
+			productRefGroup = 262DD98E19D08FB500FCAA03 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				262DD98C19D08FB500FCAA03 /* ETSMobile */,
+				262DD9A619D08FB500FCAA03 /* ETSMobileTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		262DD98B19D08FB500FCAA03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				262DD99D19D08FB500FCAA03 /* Main.storyboard in Resources */,
+				262DD9A219D08FB500FCAA03 /* LaunchScreen.xib in Resources */,
+				262DD99F19D08FB500FCAA03 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		262DD9A519D08FB500FCAA03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		262DD98919D08FB500FCAA03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				262DD99619D08FB500FCAA03 /* ETSMobile.xcdatamodeld in Sources */,
+				262DD99319D08FB500FCAA03 /* AppDelegate.swift in Sources */,
+				262DD99819D08FB500FCAA03 /* MasterViewController.swift in Sources */,
+				262DD99A19D08FB500FCAA03 /* DetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		262DD9A319D08FB500FCAA03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				262DD9AE19D08FB500FCAA03 /* ETSMobileTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		262DD9A919D08FB500FCAA03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 262DD98C19D08FB500FCAA03 /* ETSMobile */;
+			targetProxy = 262DD9A819D08FB500FCAA03 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		262DD99B19D08FB500FCAA03 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				262DD99C19D08FB500FCAA03 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		262DD9A019D08FB500FCAA03 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				262DD9A119D08FB500FCAA03 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		262DD9AF19D08FB500FCAA03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		262DD9B019D08FB500FCAA03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		262DD9B219D08FB500FCAA03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ETSMobile/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		262DD9B319D08FB500FCAA03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ETSMobile/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		262DD9B519D08FB500FCAA03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ETSMobileTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ETSMobile.app/ETSMobile";
+			};
+			name = Debug;
+		};
+		262DD9B619D08FB500FCAA03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ETSMobileTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ETSMobile.app/ETSMobile";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		262DD98819D08FB500FCAA03 /* Build configuration list for PBXProject "ETSMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				262DD9AF19D08FB500FCAA03 /* Debug */,
+				262DD9B019D08FB500FCAA03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		262DD9B119D08FB500FCAA03 /* Build configuration list for PBXNativeTarget "ETSMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				262DD9B219D08FB500FCAA03 /* Debug */,
+				262DD9B319D08FB500FCAA03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		262DD9B419D08FB500FCAA03 /* Build configuration list for PBXNativeTarget "ETSMobileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				262DD9B519D08FB500FCAA03 /* Debug */,
+				262DD9B619D08FB500FCAA03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		262DD99419D08FB500FCAA03 /* ETSMobile.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				262DD99519D08FB500FCAA03 /* ETSMobile.xcdatamodel */,
+			);
+			currentVersion = 262DD99519D08FB500FCAA03 /* ETSMobile.xcdatamodel */;
+			path = ETSMobile.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 262DD98519D08FB500FCAA03 /* Project object */;
+}
