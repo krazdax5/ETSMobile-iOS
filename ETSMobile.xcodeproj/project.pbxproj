@@ -7,50 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2630620B1A2D4052000D8172 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2630620A1A2D4052000D8172 /* AppDelegate.swift */; };
-		2630620E1A2D4052000D8172 /* ETSMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2630620C1A2D4052000D8172 /* ETSMobile.xcdatamodeld */; };
-		263062101A2D4052000D8172 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2630620F1A2D4052000D8172 /* MasterViewController.swift */; };
-		263062121A2D4052000D8172 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263062111A2D4052000D8172 /* DetailViewController.swift */; };
-		263062151A2D4052000D8172 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263062131A2D4052000D8172 /* Main.storyboard */; };
-		263062171A2D4052000D8172 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 263062161A2D4052000D8172 /* Images.xcassets */; };
-		2630621A1A2D4052000D8172 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 263062181A2D4052000D8172 /* LaunchScreen.xib */; };
-		263062261A2D4052000D8172 /* ETSMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263062251A2D4052000D8172 /* ETSMobileTests.swift */; };
+		261DFA1F1AB13E010014EF9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261DFA1E1AB13E010014EF9D /* AppDelegate.swift */; };
+		261DFA221AB13E010014EF9D /* ETSMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 261DFA201AB13E010014EF9D /* ETSMobile.xcdatamodeld */; };
+		261DFA241AB13E010014EF9D /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261DFA231AB13E010014EF9D /* MasterViewController.swift */; };
+		261DFA261AB13E010014EF9D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261DFA251AB13E010014EF9D /* DetailViewController.swift */; };
+		261DFA291AB13E010014EF9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261DFA271AB13E010014EF9D /* Main.storyboard */; };
+		261DFA2B1AB13E020014EF9D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 261DFA2A1AB13E020014EF9D /* Images.xcassets */; };
+		261DFA2E1AB13E020014EF9D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 261DFA2C1AB13E020014EF9D /* LaunchScreen.xib */; };
+		261DFA3A1AB13E020014EF9D /* ETSMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261DFA391AB13E020014EF9D /* ETSMobileTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		263062201A2D4052000D8172 /* PBXContainerItemProxy */ = {
+		261DFA341AB13E020014EF9D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 263061FD1A2D4052000D8172 /* Project object */;
+			containerPortal = 261DFA111AB13E010014EF9D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 263062041A2D4052000D8172;
+			remoteGlobalIDString = 261DFA181AB13E010014EF9D;
 			remoteInfo = ETSMobile;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		263062051A2D4052000D8172 /* ETSMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETSMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		263062091A2D4052000D8172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2630620A1A2D4052000D8172 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2630620D1A2D4052000D8172 /* ETSMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ETSMobile.xcdatamodel; sourceTree = "<group>"; };
-		2630620F1A2D4052000D8172 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		263062111A2D4052000D8172 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		263062141A2D4052000D8172 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		263062161A2D4052000D8172 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		263062191A2D4052000D8172 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		2630621F1A2D4052000D8172 /* ETSMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ETSMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		263062241A2D4052000D8172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		263062251A2D4052000D8172 /* ETSMobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETSMobileTests.swift; sourceTree = "<group>"; };
+		261DFA191AB13E010014EF9D /* ETSMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETSMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		261DFA1D1AB13E010014EF9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		261DFA1E1AB13E010014EF9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		261DFA211AB13E010014EF9D /* ETSMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ETSMobile.xcdatamodel; sourceTree = "<group>"; };
+		261DFA231AB13E010014EF9D /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		261DFA251AB13E010014EF9D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		261DFA281AB13E010014EF9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		261DFA2A1AB13E020014EF9D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		261DFA2D1AB13E020014EF9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		261DFA331AB13E020014EF9D /* ETSMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ETSMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		261DFA381AB13E020014EF9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		261DFA391AB13E020014EF9D /* ETSMobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETSMobileTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		263062021A2D4052000D8172 /* Frameworks */ = {
+		261DFA161AB13E010014EF9D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2630621C1A2D4052000D8172 /* Frameworks */ = {
+		261DFA301AB13E020014EF9D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -60,60 +60,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		263061FC1A2D4052000D8172 = {
+		261DFA101AB13E010014EF9D = {
 			isa = PBXGroup;
 			children = (
-				263062071A2D4052000D8172 /* ETSMobile */,
-				263062221A2D4052000D8172 /* ETSMobileTests */,
-				263062061A2D4052000D8172 /* Products */,
+				261DFA1B1AB13E010014EF9D /* ETSMobile */,
+				261DFA361AB13E020014EF9D /* ETSMobileTests */,
+				261DFA1A1AB13E010014EF9D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		263062061A2D4052000D8172 /* Products */ = {
+		261DFA1A1AB13E010014EF9D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				263062051A2D4052000D8172 /* ETSMobile.app */,
-				2630621F1A2D4052000D8172 /* ETSMobileTests.xctest */,
+				261DFA191AB13E010014EF9D /* ETSMobile.app */,
+				261DFA331AB13E020014EF9D /* ETSMobileTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		263062071A2D4052000D8172 /* ETSMobile */ = {
+		261DFA1B1AB13E010014EF9D /* ETSMobile */ = {
 			isa = PBXGroup;
 			children = (
-				2630620A1A2D4052000D8172 /* AppDelegate.swift */,
-				2630620F1A2D4052000D8172 /* MasterViewController.swift */,
-				263062111A2D4052000D8172 /* DetailViewController.swift */,
-				263062131A2D4052000D8172 /* Main.storyboard */,
-				263062161A2D4052000D8172 /* Images.xcassets */,
-				263062181A2D4052000D8172 /* LaunchScreen.xib */,
-				2630620C1A2D4052000D8172 /* ETSMobile.xcdatamodeld */,
-				263062081A2D4052000D8172 /* Supporting Files */,
+				261DFA1E1AB13E010014EF9D /* AppDelegate.swift */,
+				261DFA231AB13E010014EF9D /* MasterViewController.swift */,
+				261DFA251AB13E010014EF9D /* DetailViewController.swift */,
+				261DFA271AB13E010014EF9D /* Main.storyboard */,
+				261DFA2A1AB13E020014EF9D /* Images.xcassets */,
+				261DFA2C1AB13E020014EF9D /* LaunchScreen.xib */,
+				261DFA201AB13E010014EF9D /* ETSMobile.xcdatamodeld */,
+				261DFA1C1AB13E010014EF9D /* Supporting Files */,
 			);
 			path = ETSMobile;
 			sourceTree = "<group>";
 		};
-		263062081A2D4052000D8172 /* Supporting Files */ = {
+		261DFA1C1AB13E010014EF9D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				263062091A2D4052000D8172 /* Info.plist */,
+				261DFA1D1AB13E010014EF9D /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		263062221A2D4052000D8172 /* ETSMobileTests */ = {
+		261DFA361AB13E020014EF9D /* ETSMobileTests */ = {
 			isa = PBXGroup;
 			children = (
-				263062251A2D4052000D8172 /* ETSMobileTests.swift */,
-				263062231A2D4052000D8172 /* Supporting Files */,
+				261DFA391AB13E020014EF9D /* ETSMobileTests.swift */,
+				261DFA371AB13E020014EF9D /* Supporting Files */,
 			);
 			path = ETSMobileTests;
 			sourceTree = "<group>";
 		};
-		263062231A2D4052000D8172 /* Supporting Files */ = {
+		261DFA371AB13E020014EF9D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				263062241A2D4052000D8172 /* Info.plist */,
+				261DFA381AB13E020014EF9D /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -121,13 +121,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		263062041A2D4052000D8172 /* ETSMobile */ = {
+		261DFA181AB13E010014EF9D /* ETSMobile */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 263062291A2D4052000D8172 /* Build configuration list for PBXNativeTarget "ETSMobile" */;
+			buildConfigurationList = 261DFA3D1AB13E020014EF9D /* Build configuration list for PBXNativeTarget "ETSMobile" */;
 			buildPhases = (
-				263062011A2D4052000D8172 /* Sources */,
-				263062021A2D4052000D8172 /* Frameworks */,
-				263062031A2D4052000D8172 /* Resources */,
+				261DFA151AB13E010014EF9D /* Sources */,
+				261DFA161AB13E010014EF9D /* Frameworks */,
+				261DFA171AB13E010014EF9D /* Resources */,
 			);
 			buildRules = (
 			);
@@ -135,46 +135,47 @@
 			);
 			name = ETSMobile;
 			productName = ETSMobile;
-			productReference = 263062051A2D4052000D8172 /* ETSMobile.app */;
+			productReference = 261DFA191AB13E010014EF9D /* ETSMobile.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2630621E1A2D4052000D8172 /* ETSMobileTests */ = {
+		261DFA321AB13E020014EF9D /* ETSMobileTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2630622C1A2D4052000D8172 /* Build configuration list for PBXNativeTarget "ETSMobileTests" */;
+			buildConfigurationList = 261DFA401AB13E020014EF9D /* Build configuration list for PBXNativeTarget "ETSMobileTests" */;
 			buildPhases = (
-				2630621B1A2D4052000D8172 /* Sources */,
-				2630621C1A2D4052000D8172 /* Frameworks */,
-				2630621D1A2D4052000D8172 /* Resources */,
+				261DFA2F1AB13E020014EF9D /* Sources */,
+				261DFA301AB13E020014EF9D /* Frameworks */,
+				261DFA311AB13E020014EF9D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				263062211A2D4052000D8172 /* PBXTargetDependency */,
+				261DFA351AB13E020014EF9D /* PBXTargetDependency */,
 			);
 			name = ETSMobileTests;
 			productName = ETSMobileTests;
-			productReference = 2630621F1A2D4052000D8172 /* ETSMobileTests.xctest */;
+			productReference = 261DFA331AB13E020014EF9D /* ETSMobileTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		263061FD1A2D4052000D8172 /* Project object */ = {
+		261DFA111AB13E010014EF9D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = ApplETS;
 				TargetAttributes = {
-					263062041A2D4052000D8172 = {
-						CreatedOnToolsVersion = 6.1;
+					261DFA181AB13E010014EF9D = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = N742HF354K;
 					};
-					2630621E1A2D4052000D8172 = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = 263062041A2D4052000D8172;
+					261DFA321AB13E020014EF9D = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 261DFA181AB13E010014EF9D;
 					};
 				};
 			};
-			buildConfigurationList = 263062001A2D4052000D8172 /* Build configuration list for PBXProject "ETSMobile" */;
+			buildConfigurationList = 261DFA141AB13E010014EF9D /* Build configuration list for PBXProject "ETSMobile" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -182,29 +183,29 @@
 				en,
 				Base,
 			);
-			mainGroup = 263061FC1A2D4052000D8172;
-			productRefGroup = 263062061A2D4052000D8172 /* Products */;
+			mainGroup = 261DFA101AB13E010014EF9D;
+			productRefGroup = 261DFA1A1AB13E010014EF9D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				263062041A2D4052000D8172 /* ETSMobile */,
-				2630621E1A2D4052000D8172 /* ETSMobileTests */,
+				261DFA181AB13E010014EF9D /* ETSMobile */,
+				261DFA321AB13E020014EF9D /* ETSMobileTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		263062031A2D4052000D8172 /* Resources */ = {
+		261DFA171AB13E010014EF9D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263062151A2D4052000D8172 /* Main.storyboard in Resources */,
-				2630621A1A2D4052000D8172 /* LaunchScreen.xib in Resources */,
-				263062171A2D4052000D8172 /* Images.xcassets in Resources */,
+				261DFA291AB13E010014EF9D /* Main.storyboard in Resources */,
+				261DFA2E1AB13E020014EF9D /* LaunchScreen.xib in Resources */,
+				261DFA2B1AB13E020014EF9D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2630621D1A2D4052000D8172 /* Resources */ = {
+		261DFA311AB13E020014EF9D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -214,48 +215,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		263062011A2D4052000D8172 /* Sources */ = {
+		261DFA151AB13E010014EF9D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2630620E1A2D4052000D8172 /* ETSMobile.xcdatamodeld in Sources */,
-				2630620B1A2D4052000D8172 /* AppDelegate.swift in Sources */,
-				263062101A2D4052000D8172 /* MasterViewController.swift in Sources */,
-				263062121A2D4052000D8172 /* DetailViewController.swift in Sources */,
+				261DFA221AB13E010014EF9D /* ETSMobile.xcdatamodeld in Sources */,
+				261DFA1F1AB13E010014EF9D /* AppDelegate.swift in Sources */,
+				261DFA241AB13E010014EF9D /* MasterViewController.swift in Sources */,
+				261DFA261AB13E010014EF9D /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2630621B1A2D4052000D8172 /* Sources */ = {
+		261DFA2F1AB13E020014EF9D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263062261A2D4052000D8172 /* ETSMobileTests.swift in Sources */,
+				261DFA3A1AB13E020014EF9D /* ETSMobileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		263062211A2D4052000D8172 /* PBXTargetDependency */ = {
+		261DFA351AB13E020014EF9D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 263062041A2D4052000D8172 /* ETSMobile */;
-			targetProxy = 263062201A2D4052000D8172 /* PBXContainerItemProxy */;
+			target = 261DFA181AB13E010014EF9D /* ETSMobile */;
+			targetProxy = 261DFA341AB13E020014EF9D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		263062131A2D4052000D8172 /* Main.storyboard */ = {
+		261DFA271AB13E010014EF9D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				263062141A2D4052000D8172 /* Base */,
+				261DFA281AB13E010014EF9D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		263062181A2D4052000D8172 /* LaunchScreen.xib */ = {
+		261DFA2C1AB13E020014EF9D /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				263062191A2D4052000D8172 /* Base */,
+				261DFA2D1AB13E020014EF9D /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -263,7 +264,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		263062271A2D4052000D8172 /* Debug */ = {
+		261DFA3B1AB13E020014EF9D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -297,7 +298,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -306,7 +307,7 @@
 			};
 			name = Debug;
 		};
-		263062281A2D4052000D8172 /* Release */ = {
+		261DFA3C1AB13E020014EF9D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -324,7 +325,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -334,7 +335,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -342,27 +343,29 @@
 			};
 			name = Release;
 		};
-		2630622A1A2D4052000D8172 /* Debug */ = {
+		261DFA3E1AB13E020014EF9D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ETSMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		2630622B1A2D4052000D8172 /* Release */ = {
+		261DFA3F1AB13E020014EF9D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ETSMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
-		2630622D1A2D4052000D8172 /* Debug */ = {
+		261DFA411AB13E020014EF9D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -381,7 +384,7 @@
 			};
 			name = Debug;
 		};
-		2630622E1A2D4052000D8172 /* Release */ = {
+		261DFA421AB13E020014EF9D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -399,45 +402,47 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		263062001A2D4052000D8172 /* Build configuration list for PBXProject "ETSMobile" */ = {
+		261DFA141AB13E010014EF9D /* Build configuration list for PBXProject "ETSMobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				263062271A2D4052000D8172 /* Debug */,
-				263062281A2D4052000D8172 /* Release */,
+				261DFA3B1AB13E020014EF9D /* Debug */,
+				261DFA3C1AB13E020014EF9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		263062291A2D4052000D8172 /* Build configuration list for PBXNativeTarget "ETSMobile" */ = {
+		261DFA3D1AB13E020014EF9D /* Build configuration list for PBXNativeTarget "ETSMobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2630622A1A2D4052000D8172 /* Debug */,
-				2630622B1A2D4052000D8172 /* Release */,
+				261DFA3E1AB13E020014EF9D /* Debug */,
+				261DFA3F1AB13E020014EF9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		2630622C1A2D4052000D8172 /* Build configuration list for PBXNativeTarget "ETSMobileTests" */ = {
+		261DFA401AB13E020014EF9D /* Build configuration list for PBXNativeTarget "ETSMobileTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2630622D1A2D4052000D8172 /* Debug */,
-				2630622E1A2D4052000D8172 /* Release */,
+				261DFA411AB13E020014EF9D /* Debug */,
+				261DFA421AB13E020014EF9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2630620C1A2D4052000D8172 /* ETSMobile.xcdatamodeld */ = {
+		261DFA201AB13E010014EF9D /* ETSMobile.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2630620D1A2D4052000D8172 /* ETSMobile.xcdatamodel */,
+				261DFA211AB13E010014EF9D /* ETSMobile.xcdatamodel */,
 			);
-			currentVersion = 2630620D1A2D4052000D8172 /* ETSMobile.xcdatamodel */;
+			currentVersion = 261DFA211AB13E010014EF9D /* ETSMobile.xcdatamodel */;
 			path = ETSMobile.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 263061FD1A2D4052000D8172 /* Project object */;
+	rootObject = 261DFA111AB13E010014EF9D /* Project object */;
 }

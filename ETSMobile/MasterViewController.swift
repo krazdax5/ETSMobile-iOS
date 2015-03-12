@@ -2,8 +2,8 @@
 //  MasterViewController.swift
 //  ETSMobile
 //
-//  Created by Jean-Philippe Martin on 2014-12-01.
-//  Copyright (c) 2014 ApplETS. All rights reserved.
+//  Created by Jean-Philippe Martin on 2015-03-11.
+//  Copyright (c) 2015 ApplETS. All rights reserved.
 //
 
 import UIKit
@@ -113,7 +113,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
         let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
-        cell.textLabel.text = object.valueForKey("timeStamp")!.description
+        cell.textLabel!.text = object.valueForKey("timeStamp")!.description
     }
 
     // MARK: - Fetched results controller

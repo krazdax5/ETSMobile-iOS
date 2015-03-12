@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  ETSMobile
 //
-//  Created by Jean-Philippe Martin on 2014-12-01.
-//  Copyright (c) 2014 ApplETS. All rights reserved.
+//  Created by Jean-Philippe Martin on 2015-03-11.
+//  Copyright (c) 2015 ApplETS. All rights reserved.
 //
 
 import UIKit
@@ -89,7 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
             coordinator = nil
             // Report any error we got.
-            let dict = NSMutableDictionary()
+            var dict = [String: AnyObject]()
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
             dict[NSUnderlyingErrorKey] = error

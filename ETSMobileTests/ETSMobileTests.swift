@@ -2,8 +2,8 @@
 //  ETSMobileTests.swift
 //  ETSMobileTests
 //
-//  Created by Jean-Philippe Martin on 2014-12-01.
-//  Copyright (c) 2014 ApplETS. All rights reserved.
+//  Created by Jean-Philippe Martin on 2015-03-11.
+//  Copyright (c) 2015 ApplETS. All rights reserved.
 //
 
 import UIKit
