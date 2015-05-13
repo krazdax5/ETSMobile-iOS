@@ -15,6 +15,8 @@
 		261DFA2B1AB13E020014EF9D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 261DFA2A1AB13E020014EF9D /* Images.xcassets */; };
 		261DFA2E1AB13E020014EF9D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 261DFA2C1AB13E020014EF9D /* LaunchScreen.xib */; };
 		261DFA3A1AB13E020014EF9D /* ETSMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261DFA391AB13E020014EF9D /* ETSMobileTests.swift */; };
+		E94B58EF1B039D3F00035BE0 /* ETSAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94B58ED1B039D3F00035BE0 /* ETSAuthenticationViewController.swift */; };
+		E94B58F01B039D3F00035BE0 /* ETSWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94B58EE1B039D3F00035BE0 /* ETSWebViewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		261DFA331AB13E020014EF9D /* ETSMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ETSMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		261DFA381AB13E020014EF9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		261DFA391AB13E020014EF9D /* ETSMobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETSMobileTests.swift; sourceTree = "<group>"; };
+		E94B58ED1B039D3F00035BE0 /* ETSAuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETSAuthenticationViewController.swift; sourceTree = "<group>"; };
+		E94B58EE1B039D3F00035BE0 /* ETSWebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETSWebViewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		261DFA1B1AB13E010014EF9D /* ETSMobile */ = {
 			isa = PBXGroup;
 			children = (
+				E94B58EB1B039D3F00035BE0 /* Controllers */,
 				261DFA1E1AB13E010014EF9D /* AppDelegate.swift */,
 				261DFA231AB13E010014EF9D /* MasterViewController.swift */,
 				261DFA251AB13E010014EF9D /* DetailViewController.swift */,
@@ -116,6 +121,23 @@
 				261DFA381AB13E020014EF9D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E94B58EB1B039D3F00035BE0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E94B58EC1B039D3F00035BE0 /* Base */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E94B58EC1B039D3F00035BE0 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E94B58ED1B039D3F00035BE0 /* ETSAuthenticationViewController.swift */,
+				E94B58EE1B039D3F00035BE0 /* ETSWebViewViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +245,8 @@
 				261DFA1F1AB13E010014EF9D /* AppDelegate.swift in Sources */,
 				261DFA241AB13E010014EF9D /* MasterViewController.swift in Sources */,
 				261DFA261AB13E010014EF9D /* DetailViewController.swift in Sources */,
+				E94B58EF1B039D3F00035BE0 /* ETSAuthenticationViewController.swift in Sources */,
+				E94B58F01B039D3F00035BE0 /* ETSWebViewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
