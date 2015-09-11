@@ -10,6 +10,7 @@
 #import "ETSBandwidth.h"
 #import "ETSBandwidthCell.h"
 #import "ETSCoreDataHelper.h"
+#import "ETSBandwidthPieChart.h"
 
 @interface ETSBandwidthDetailViewController ()
 @property (nonatomic, strong) NSNumberFormatter *formatter;
@@ -17,6 +18,9 @@
 @property (nonatomic, copy) NSString *apartment;
 @property (nonatomic, copy) NSString *phase;
 @property (nonatomic, copy) NSString *month;
+@property (nonatomic, strong) NSMutableDictionary *usagePerPort;
+@property (weak, nonatomic) IBOutlet UIView *pieChartView;
+@property (weak, nonatomic) IBOutlet ETSBandwidthPieChart *pieChart;
 @end
 
 @implementation ETSBandwidthDetailViewController
@@ -79,7 +83,79 @@
     if ([self.apartment length] == 0 || [self.phase integerValue] == 0) {
         self.dataNeedRefresh = NO;
         [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
+    } else {
+        [self updatePieChart];
     }
+}
+
+-(void)updatePieChart {
+    // Fetching the data for the pie chart
+    self.usagePerPort = [[NSMutableDictionary alloc] init];
+    
+    for (id section in [self.fetchedResultsController sections]) {
+        for (ETSBandwidth *object in [section objects]) {
+            
+            // Getting the port
+            NSString *port;
+            NSScanner *scanner = [NSScanner scannerWithString:object.port];
+            NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+            [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
+            [scanner scanCharactersFromSet:numbers intoString:&port];
+            
+            float usage = [object.upload floatValue]+[object.download floatValue];
+            
+            if ([[self usagePerPort] valueForKey:port] == nil) {
+                [[self usagePerPort] setValue:[NSNumber numberWithFloat: usage] forKey:port];
+            } else {
+                float newUsage = usage + [[[self usagePerPort] valueForKey:port] floatValue];
+                [[self usagePerPort] setValue:[NSNumber numberWithFloat: newUsage] forKey:port];
+            }
+        }
+    }
+    
+    // Hidding view if only one port (or none)
+    if ([self.usagePerPort count] < 2) {
+        CGRect frame = [self.pieChartView frame];
+        frame.size.height = 0;
+        [self.pieChartView setFrame:frame];
+        return;
+    }
+    
+    // Generating data for the Pie Chart
+    NSArray *colors = @[PNRed, PNBlue, PNGreen, PNYellow];
+    int i = 0;
+    NSMutableArray *pieChartArray = [[NSMutableArray alloc] init];
+    for (id port in self.usagePerPort) {
+        float usage = [[[self usagePerPort] valueForKey:port] floatValue];
+        [pieChartArray addObject:[PNPieChartDataItem dataItemWithValue:usage color:colors[i] description: port]];
+        i = (i+1)%colors.count;
+    }
+    
+    // Parametring Pie Chart
+    self.pieChart.backgroundColor = [UIColor clearColor];
+    self.pieChart.duration = 1;
+    self.pieChart.descriptionTextColor = [UIColor whiteColor];
+    self.pieChart.descriptionTextFont = [UIFont systemFontOfSize:15];
+    [self.pieChart updateChartData:pieChartArray];
+    [self.pieChart strokeChart];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    ETSBandwidth *bandwidth = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
+    NSDateFormatter *titleFormatter = [[NSDateFormatter alloc] init];
+    titleFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr_CA"];
+    titleFormatter.dateFormat = @"cccc, d LLLL yyyy";
+    return [titleFormatter stringFromDate:bandwidth.date];
+}
+
+- (void)configureCell:(ETSBandwidthCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    ETSBandwidth *bandwidth = [self.fetchedResultsController objectAtIndexPath:indexPath];
+
+    cell.portLabel.text = bandwidth.port;
+    cell.uploadLabel.text = [NSString stringWithFormat:@"%@ Mo (⬆︎)", [self.formatter stringFromNumber:bandwidth.upload]];
+    cell.downloadLabel.text = [NSString stringWithFormat:@"%@ Mo (⬇︎)", [self.formatter stringFromNumber:bandwidth.download]];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -108,23 +184,6 @@
     return _fetchedResultsController;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    ETSBandwidth *bandwidth = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
-    NSDateFormatter *titleFormatter = [[NSDateFormatter alloc] init];
-    titleFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr_CA"];
-    titleFormatter.dateFormat = @"cccc, d LLLL yyyy";
-    return [titleFormatter stringFromDate:bandwidth.date];
-}
-
-- (void)configureCell:(ETSBandwidthCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    ETSBandwidth *bandwidth = [self.fetchedResultsController objectAtIndexPath:indexPath];
-
-    cell.portLabel.text = bandwidth.port;
-    cell.uploadLabel.text = [NSString stringWithFormat:@"%@ Mo (⬆︎)", [self.formatter stringFromNumber:bandwidth.upload]];
-    cell.downloadLabel.text = [NSString stringWithFormat:@"%@ Mo (⬇︎)", [self.formatter stringFromNumber:bandwidth.download]];
-}
 
 - (id)synchronization:(ETSSynchronization *)synchronization updateJSONObjects:(id)objects
 {
@@ -163,6 +222,8 @@
         [entry setValue:[NSString stringWithFormat:@"%@-%@", [[day valueForKey:@"td"]objectAtIndex:0], date] forKey:@"id"];
         [entries addObject:entry];
     }
+    
+    [self updatePieChart];
     
     return entries;
 }

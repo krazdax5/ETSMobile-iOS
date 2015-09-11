@@ -105,6 +105,7 @@
 		E9BCEE8E1BA34DCB00BD54E1 /* ETSBandwitdhConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BCEE8B1BA34DCB00BD54E1 /* ETSBandwitdhConfigViewController.m */; settings = {ASSET_TAGS = (); }; };
 		E9BCEE911BA34DE300BD54E1 /* ETSBandwidthCircleChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BCEE901BA34DE300BD54E1 /* ETSBandwidthCircleChart.m */; settings = {ASSET_TAGS = (); }; };
 		E9BCEE941BA34F3C00BD54E1 /* ETSBandwidthDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BCEE931BA34F3C00BD54E1 /* ETSBandwidthDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E9D19C8E1BA3964100401E08 /* ETSBandwidthPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D19C8D1BA3964100401E08 /* ETSBandwidthPieChart.m */; settings = {ASSET_TAGS = (); }; };
 		E9EE856B1B99EFEE0074FAB3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE856A1B99EFEE0074FAB3 /* CoreGraphics.framework */; };
 		E9EE856C1B99EFF30074FAB3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264187291AB77B9D0027561B /* CoreTelephony.framework */; };
 		E9EE856E1B99EFFC0074FAB3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE856D1B99EFFC0074FAB3 /* CoreText.framework */; };
@@ -312,6 +313,8 @@
 		E9BCEE901BA34DE300BD54E1 /* ETSBandwidthCircleChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSBandwidthCircleChart.m; path = Views/Bandwidth/ETSBandwidthCircleChart.m; sourceTree = "<group>"; };
 		E9BCEE921BA34F3C00BD54E1 /* ETSBandwidthDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSBandwidthDetailViewController.h; path = Controllers/Bandwidth/ETSBandwidthDetailViewController.h; sourceTree = "<group>"; };
 		E9BCEE931BA34F3C00BD54E1 /* ETSBandwidthDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSBandwidthDetailViewController.m; path = Controllers/Bandwidth/ETSBandwidthDetailViewController.m; sourceTree = "<group>"; };
+		E9D19C8C1BA3964100401E08 /* ETSBandwidthPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSBandwidthPieChart.h; path = Views/Bandwidth/ETSBandwidthPieChart.h; sourceTree = "<group>"; };
+		E9D19C8D1BA3964100401E08 /* ETSBandwidthPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSBandwidthPieChart.m; path = Views/Bandwidth/ETSBandwidthPieChart.m; sourceTree = "<group>"; };
 		E9EE856A1B99EFEE0074FAB3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E9EE856D1B99EFFC0074FAB3 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		E9EE856F1B99F0030074FAB3 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -408,6 +411,8 @@
 				260244F51ACA137C001B57C3 /* ETSBandwidthCell.m */,
 				E9BCEE8F1BA34DE300BD54E1 /* ETSBandwidthCircleChart.h */,
 				E9BCEE901BA34DE300BD54E1 /* ETSBandwidthCircleChart.m */,
+				E9D19C8C1BA3964100401E08 /* ETSBandwidthPieChart.h */,
+				E9D19C8D1BA3964100401E08 /* ETSBandwidthPieChart.m */,
 			);
 			name = Bandwidth;
 			sourceTree = "<group>";
@@ -1104,6 +1109,7 @@
 				2602450F1ACA53E5001B57C3 /* ETSAboutViewController.m in Sources */,
 				1D50F93D1ACC76FD00B06561 /* ETSSecurityProcedureViewController.m in Sources */,
 				1DDF27101AD5AF7B00D1A7DA /* ETSMoodleResultViewCell.m in Sources */,
+				E9D19C8E1BA3964100401E08 /* ETSBandwidthPieChart.m in Sources */,
 				2602454A1ACB9087001B57C3 /* NSURL+Document.m in Sources */,
 				264187491AB77E780027561B /* ETSNews.m in Sources */,
 				E9BCEE8D1BA34DCB00BD54E1 /* ETSBandwidthViewController.m in Sources */,

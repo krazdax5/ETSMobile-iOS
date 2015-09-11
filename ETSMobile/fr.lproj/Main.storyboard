@@ -346,9 +346,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="aeq-Tg-7jv">
+                            <rect key="frame" x="0.0" y="64" width="600" height="200"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuB-ii-IV3" customClass="ETSBandwidthPieChart">
+                                    <rect key="frame" x="208" y="8" width="184" height="184"/>
+                                    <animations/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="cuB-ii-IV3" secondAttribute="height" multiplier="1:1" id="tkU-fU-gHL"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <animations/>
+                            <constraints>
+                                <constraint firstItem="cuB-ii-IV3" firstAttribute="bottom" secondItem="aeq-Tg-7jv" secondAttribute="bottomMargin" id="U2i-i7-zrX"/>
+                                <constraint firstItem="cuB-ii-IV3" firstAttribute="centerX" secondItem="aeq-Tg-7jv" secondAttribute="centerX" id="W4U-Ow-CCb"/>
+                                <constraint firstItem="cuB-ii-IV3" firstAttribute="top" secondItem="aeq-Tg-7jv" secondAttribute="topMargin" id="m0E-lM-WkO"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BandwidthIdentifier" rowHeight="70" id="SVF-Tr-Jh3" customClass="ETSBandwidthCell">
-                                <rect key="frame" x="0.0" y="113.5" width="600" height="70"/>
+                                <rect key="frame" x="0.0" y="313.5" width="600" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SVF-Tr-Jh3" id="O8l-X7-FeD">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
@@ -416,6 +436,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                     </refreshControl>
+                    <connections>
+                        <outlet property="pieChart" destination="cuB-ii-IV3" id="irL-ol-Xd3"/>
+                        <outlet property="pieChartView" destination="aeq-Tg-7jv" id="yAh-xk-HeO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dh-AT-naG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
