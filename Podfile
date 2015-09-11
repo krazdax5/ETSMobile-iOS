@@ -7,6 +7,7 @@ target 'ETSMobile' do
     pod 'Crashlytics'
     pod 'MSDynamicsDrawerViewController'
     pod 'MSCollectionViewCalendarLayout'
+    pod 'PNChart'
     pod 'SDWebImage', '~>3.7'
     pod 'SupportKit'
 end
