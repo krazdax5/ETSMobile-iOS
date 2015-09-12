@@ -93,15 +93,25 @@
     // Fetching the data for the pie chart
     self.usagePerPort = [[NSMutableDictionary alloc] init];
     
+    NSMutableDictionary *chambreForPort = [[NSMutableDictionary alloc] init];
+    
     for (id section in [self.fetchedResultsController sections]) {
         for (ETSBandwidth *object in [section objects]) {
             
             // Getting the port
             NSString *port;
+            NSString *chambre;
             NSScanner *scanner = [NSScanner scannerWithString:object.port];
             NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+            NSCharacterSet *chambers = [NSCharacterSet characterSetWithCharactersInString:@"ChambreABD "];
             [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
             [scanner scanCharactersFromSet:numbers intoString:&port];
+            [scanner scanUpToCharactersFromSet:chambers intoString:NULL];
+            [scanner scanCharactersFromSet:chambers intoString:&chambre];
+            
+            if (chambre.length > 0) {
+                [chambreForPort setValue:chambre forKey:port];
+            }
             
             float usage = [object.upload floatValue]+[object.download floatValue];
             
@@ -123,12 +133,24 @@
     }
     
     // Generating data for the Pie Chart
-    NSArray *colors = @[PNRed, PNBlue, PNGreen, PNYellow];
+    NSArray *colors = @[
+                        [UIColor colorWithRed:163/255.0 green:0 blue:0 alpha:1],
+                        [UIColor colorWithRed:204/255.0 green:0 blue:0 alpha:1],
+                        [UIColor colorWithRed:214/255.0 green:51/255.0 blue:51/255.0 alpha:1],
+                        [UIColor colorWithRed:224/255.0 green:102/255.0 blue:102/255.0 alpha:1]];
     int i = 0;
     NSMutableArray *pieChartArray = [[NSMutableArray alloc] init];
     for (id port in self.usagePerPort) {
         float usage = [[[self usagePerPort] valueForKey:port] floatValue];
-        [pieChartArray addObject:[PNPieChartDataItem dataItemWithValue:usage color:colors[i] description: port]];
+        
+        NSString *desc;
+        if ([chambreForPort valueForKey: port]) {
+             desc = [chambreForPort valueForKey: port];
+        } else {
+             desc = port;
+        }
+        
+        [pieChartArray addObject:[PNPieChartDataItem dataItemWithValue:usage color:colors[i] description: desc]];
         i = (i+1)%colors.count;
     }
     
@@ -136,7 +158,7 @@
     self.pieChart.backgroundColor = [UIColor clearColor];
     self.pieChart.duration = 1;
     self.pieChart.descriptionTextColor = [UIColor whiteColor];
-    self.pieChart.descriptionTextFont = [UIFont systemFontOfSize:15];
+    self.pieChart.descriptionTextFont = [UIFont systemFontOfSize:10];
     [self.pieChart updateChartData:pieChartArray];
     
     // Generating the legend
