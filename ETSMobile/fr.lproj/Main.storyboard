@@ -351,19 +351,27 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuB-ii-IV3" customClass="ETSBandwidthPieChart">
-                                    <rect key="frame" x="208" y="8" width="184" height="184"/>
+                                    <rect key="frame" x="16" y="24" width="176" height="176"/>
                                     <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" secondItem="cuB-ii-IV3" secondAttribute="height" multiplier="1:1" id="tkU-fU-gHL"/>
+                                        <constraint firstAttribute="width" secondItem="cuB-ii-IV3" secondAttribute="height" multiplier="1:1" id="sJI-WB-aGf"/>
                                     </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46N-mG-2He">
+                                    <rect key="frame" x="200" y="24" width="392" height="176"/>
+                                    <animations/>
                                 </view>
                             </subviews>
                             <animations/>
                             <constraints>
-                                <constraint firstItem="cuB-ii-IV3" firstAttribute="bottom" secondItem="aeq-Tg-7jv" secondAttribute="bottomMargin" id="U2i-i7-zrX"/>
-                                <constraint firstItem="cuB-ii-IV3" firstAttribute="centerX" secondItem="aeq-Tg-7jv" secondAttribute="centerX" id="W4U-Ow-CCb"/>
-                                <constraint firstItem="cuB-ii-IV3" firstAttribute="top" secondItem="aeq-Tg-7jv" secondAttribute="topMargin" id="m0E-lM-WkO"/>
+                                <constraint firstAttribute="bottom" secondItem="cuB-ii-IV3" secondAttribute="bottom" id="3TC-g4-dVb"/>
+                                <constraint firstItem="46N-mG-2He" firstAttribute="leading" secondItem="cuB-ii-IV3" secondAttribute="trailing" constant="8" id="5Ne-TE-yUB"/>
+                                <constraint firstItem="cuB-ii-IV3" firstAttribute="top" secondItem="aeq-Tg-7jv" secondAttribute="top" constant="24" id="9Vy-Ki-x6t"/>
+                                <constraint firstItem="cuB-ii-IV3" firstAttribute="leading" secondItem="aeq-Tg-7jv" secondAttribute="leading" constant="16" id="KT8-Vw-bSF"/>
+                                <constraint firstAttribute="bottom" secondItem="46N-mG-2He" secondAttribute="bottom" id="cd9-Rw-E3h"/>
+                                <constraint firstAttribute="trailing" secondItem="46N-mG-2He" secondAttribute="trailing" constant="8" id="gX3-Ij-vXi"/>
+                                <constraint firstItem="46N-mG-2He" firstAttribute="top" secondItem="aeq-Tg-7jv" secondAttribute="top" constant="24" id="n6R-Bg-UV8"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -437,6 +445,7 @@
                         <animations/>
                     </refreshControl>
                     <connections>
+                        <outlet property="legendView" destination="46N-mG-2He" id="v5h-3W-AQj"/>
                         <outlet property="pieChart" destination="cuB-ii-IV3" id="irL-ol-Xd3"/>
                         <outlet property="pieChartView" destination="aeq-Tg-7jv" id="yAh-xk-HeO"/>
                     </connections>

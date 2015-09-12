@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSMutableDictionary *usagePerPort;
 @property (weak, nonatomic) IBOutlet UIView *pieChartView;
 @property (weak, nonatomic) IBOutlet ETSBandwidthPieChart *pieChart;
+@property (weak, nonatomic) IBOutlet UIView *legendView;
 @end
 
 @implementation ETSBandwidthDetailViewController
@@ -137,7 +138,16 @@
     self.pieChart.descriptionTextColor = [UIColor whiteColor];
     self.pieChart.descriptionTextFont = [UIFont systemFontOfSize:15];
     [self.pieChart updateChartData:pieChartArray];
+    
+    // Generating the legend
+    self.pieChart.legendStyle = PNLegendItemStyleStacked;
+    self.pieChart.legendFont = [UIFont systemFontOfSize:14];
+    UIView *legend = [self.pieChart getLegendWithMaxWidth:CGRectGetWidth(self.legendView.frame)];
+    [legend setFrame:CGRectMake(0, (CGRectGetHeight(self.legendView.frame)-CGRectGetHeight(legend.frame))/2, legend.frame.size.width, legend.frame.size.height)];
+    
+    // Drawing pie chart and legend
     [self.pieChart strokeChart];
+    [self.legendView addSubview:legend];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
