@@ -136,9 +136,11 @@
     // Quit if only one port (or none)
     if ([self.usagePerPort count] < 2) {
         return;
-    } else {
-        [self.pieChartView setFrame:self.savedPieFrame];
     }
+    
+    // Set pieChart to normal size
+    [self.pieChartView setFrame:self.savedPieFrame];
+    [self.pieChart recompute];
     
     // Generating data for the Pie Chart
     NSArray *colors = @[
@@ -181,10 +183,18 @@
 }
 
 - (void)hidePieChart {
+    // Set frame to 0 height
     CGRect frame = self.savedPieFrame;
     frame.size.height = 0;
-    [[self.legendView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.pieChartView setFrame:frame];
+    
+    // Removing Chart
+    [self.pieChart updateChartData:@[]];
+    [self.pieChart recompute];
+    [self.pieChart strokeChart];
+    
+    // Removing Legend
+    [[self.legendView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
