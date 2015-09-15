@@ -11,7 +11,7 @@ PODS:
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
-  - SupportKit (2.10.1)
+  - SupportKit (2.10.2)
   - UICountingLabel (1.2.0)
 
 DEPENDENCIES:
@@ -32,7 +32,7 @@ SPEC CHECKSUMS:
   MSDynamicsDrawerViewController: 2874df90f5e9453dc7d4e32f8038b50615d4baa7
   PNChart: c1755716bbd45386d2035b2bf2ce73e6d3f8cb22
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
-  SupportKit: 2b3c49fd7855b6a8b8cedff1a7c819e418f459b7
+  SupportKit: 7ec8dab8cdd2468a74901a7e88c647f504d265e4
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
 
 COCOAPODS: 0.39.0.beta.4

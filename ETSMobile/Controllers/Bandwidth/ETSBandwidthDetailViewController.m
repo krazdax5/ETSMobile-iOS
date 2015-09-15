@@ -19,6 +19,8 @@
 @property (nonatomic, copy) NSString *phase;
 @property (nonatomic, copy) NSString *month;
 @property (nonatomic, strong) NSMutableDictionary *usagePerPort;
+@property CGRect savedPieFrame;
+@property CGRect savedLegendFrame;
 @property (weak, nonatomic) IBOutlet UIView *pieChartView;
 @property (weak, nonatomic) IBOutlet ETSBandwidthPieChart *pieChart;
 @property (weak, nonatomic) IBOutlet UIView *legendView;
@@ -31,6 +33,7 @@
 - (void)updateBandwidth:(id)sender
 {
     [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
+    [self hidePieChart];
     
     if ([self.phase length] == 0 || [self.apartment length] == 0) {
         return;
@@ -76,10 +79,14 @@
     self.formatter.minimumIntegerDigits = 1;
     
     [self.refreshControl addTarget:self action:@selector(updateBandwidth:) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl.tintColor = [UIColor lightGrayColor];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     self.apartment = [userDefaults stringForKey:@"apartment"];
     self.phase = [userDefaults stringForKey:@"phase"];
+    
+    self.savedPieFrame = [self.pieChartView frame];
+    self.savedLegendFrame = [self.legendView frame];
     
     if ([self.apartment length] == 0 || [self.phase integerValue] == 0) {
         self.dataNeedRefresh = NO;
@@ -90,9 +97,11 @@
 }
 
 -(void)updatePieChart {
+    // Removing old pie charts
+    [self hidePieChart];
+    
     // Fetching the data for the pie chart
     self.usagePerPort = [[NSMutableDictionary alloc] init];
-    
     NSMutableDictionary *chambreForPort = [[NSMutableDictionary alloc] init];
     
     for (id section in [self.fetchedResultsController sections]) {
@@ -124,12 +133,11 @@
         }
     }
     
-    // Hidding view if only one port (or none)
+    // Quit if only one port (or none)
     if ([self.usagePerPort count] < 2) {
-        CGRect frame = [self.pieChartView frame];
-        frame.size.height = 0;
-        [self.pieChartView setFrame:frame];
         return;
+    } else {
+        [self.pieChartView setFrame:self.savedPieFrame];
     }
     
     // Generating data for the Pie Chart
@@ -164,12 +172,19 @@
     // Generating the legend
     self.pieChart.legendStyle = PNLegendItemStyleStacked;
     self.pieChart.legendFont = [UIFont systemFontOfSize:14];
-    UIView *legend = [self.pieChart getLegendWithMaxWidth:CGRectGetWidth(self.legendView.frame)];
-    [legend setFrame:CGRectMake(0, (CGRectGetHeight(self.legendView.frame)-CGRectGetHeight(legend.frame))/2, legend.frame.size.width, legend.frame.size.height)];
+    UIView *legend = [self.pieChart getLegendWithMaxWidth:CGRectGetWidth(self.savedLegendFrame)];
+    [legend setFrame:CGRectMake(0, (CGRectGetHeight(self.savedLegendFrame)-CGRectGetHeight(legend.frame))/2, legend.frame.size.width, legend.frame.size.height)];
     
     // Drawing pie chart and legend
     [self.pieChart strokeChart];
     [self.legendView addSubview:legend];
+}
+
+- (void)hidePieChart {
+    CGRect frame = self.savedPieFrame;
+    frame.size.height = 0;
+    [[self.legendView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self.pieChartView setFrame:frame];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
