@@ -13,6 +13,7 @@
 + (id)requestForCourses;
 + (id)requestForProfile;
 + (id)requestForProgram;
++ (id)requestForPartners;
 + (id)requestForCalendar:(NSString *)session;
 + (id)requestForSession;
 + (id)requestForMoodleCoursesWithToken:(NSString *)token userid:(NSString *)userid;

@@ -53,6 +53,11 @@
     return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Program"]];
 }
 
++ (id)URLForPartners
+{
+    return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Partners"]];
+}
+
 + (id)URLForCalendar
 {
     return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Calendar"]];

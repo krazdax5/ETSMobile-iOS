@@ -65,6 +65,15 @@
     return [self requestWithUsernameAndPassword:[NSURL URLForProgram]];
 }
 
++ (id)requestForPartners
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    [request basicAuthForRequestWithUsername:[NSURLRequest applETSUsername] password:[NSURLRequest applETSPassword]];
+    request.URL = [NSURL URLForPartners];
+    return request;
+}
+
 + (id)requestForCalendar:(NSString *)session
 {
     NSMutableURLRequest *request = [NSURLRequest JSONRequestWithURL:[NSURL URLForCalendar]];

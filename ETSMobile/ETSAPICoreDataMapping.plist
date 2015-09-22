@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Partner</key>
+	<dict>
+		<key>imageurl</key>
+		<string>imageurl</string>
+		<key>name</key>
+		<string>name</string>
+		<key>index</key>
+		<string>index</string>
+	</dict>
 	<key>NewsSource</key>
 	<dict>
 		<key>enabled</key>

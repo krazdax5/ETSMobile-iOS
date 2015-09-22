@@ -13,6 +13,7 @@
 + (id)URLForProfile;
 + (id)URLForMoodle;
 + (id)URLForProgram;
++ (id)URLForPartners;
 + (id)URLForCalendar;
 + (id)URLForSession;
 + (id)URLForEvaluations;
