@@ -138,6 +138,15 @@
     return request;
 }
 
++ (id)requestforNewsSources
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request basicAuthForRequestWithUsername:[NSURLRequest applETSUsername] password:[NSURLRequest applETSPassword]];
+    request.URL = [NSURL URLForNewsSources];
+    
+    return request;
+}
+
 + (id)requestForNewsWithSources:(NSArray *)sources
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];

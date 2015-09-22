@@ -63,6 +63,11 @@
     return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Session"]];
 }
 
++ (id)URLForNewsSources
+{
+    return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"NewsSources"]];
+}
+
 + (id)URLForNewsWithSources:(NSArray *)sources
 {
     NSMutableArray *urls = [NSMutableArray array];

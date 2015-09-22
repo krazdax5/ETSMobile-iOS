@@ -4,12 +4,8 @@
 <dict>
 	<key>NewsSource</key>
 	<dict>
-		<key>enabled</key>
-		<string>enabled</string>
 		<key>name</key>
 		<string>name</string>
-		<key>link</key>
-		<string>url</string>
 		<key>group</key>
 		<string>group</string>
 		<key>id</key>

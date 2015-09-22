@@ -14,6 +14,8 @@
 	<string>https://signets-ens.etsmtl.ca/Secure/WebServices/SignetsMobile.asmx/listeProgrammes</string>
 	<key>News</key>
 	<string>https://api.clubapplets.ca/news/%@.json?post_date_min=%@&amp;post_date_max=%@</string>
+	<key>NewsSources</key>
+	<string>https://api.clubapplets.ca/news/list</string>
 	<key>Comment</key>
 	<string>https://api.clubapplets.ca/mail</string>
 	<key>Bandwidth</key>

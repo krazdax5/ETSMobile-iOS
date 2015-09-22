@@ -19,6 +19,7 @@
 + (id)requestForMoodleCourseDetailWithToken:(NSString *)token courseid:(NSString *)courseid;
 + (id)requestForEvaluationsWithCourse:(ETSCourse *)course;
 + (id)requestForDirectory;
++ (id)requestforNewsSources;
 + (id)requestForNewsWithSources:(NSArray *)sources;
 + (id)requestForRadio;
 + (id)requestForUniversityCalendarStart:(NSDate *)start end:(NSDate *)end;

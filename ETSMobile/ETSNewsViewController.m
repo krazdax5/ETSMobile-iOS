@@ -23,16 +23,16 @@
 
 - (void)updateDefaultNewsSource
 {
-    NSArray *sources = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NewsSources" ofType:@"plist"]];
-    
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
+    synchronization.request = [NSURLRequest requestforNewsSources];
     synchronization.entityName = @"NewsSource";
     synchronization.compareKey = @"id";
     synchronization.ignoredAttributes = @[@"enabled"];
+    synchronization.appletsServer = YES;
     synchronization.managedObjectContext = self.managedObjectContext;
     
     NSError *error = nil;
-    [synchronization synchronizeJSONArray:sources error:&error];
+    [self.synchronization synchronize:&error];
     if (![self.managedObjectContext save:&error]) {
         // FIXME: Update to handle the error appropriately.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
