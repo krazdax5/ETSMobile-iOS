@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15A282b" minimumToolsVersion="Automatic">
     <entity name="Bandwidth" representedClassName="ETSBandwidth" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="download" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -111,6 +111,11 @@
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Partner" representedClassName="ETSPartner" syncable="YES">
+        <attribute name="imageurl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Profile" representedClassName="ETSProfile" syncable="YES">
         <attribute name="balance" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="creditsFailed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -157,5 +162,6 @@
         <element name="Profile" positionX="81" positionY="-171" width="128" height="180"/>
         <element name="Program" positionX="243" positionY="-37" width="128" height="253"/>
         <element name="Session" positionX="-110" positionY="-160" width="128" height="88"/>
+        <element name="Partner" positionX="-243" positionY="-207" width="128" height="90"/>
     </elements>
 </model>

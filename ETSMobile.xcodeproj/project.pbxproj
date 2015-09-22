@@ -122,6 +122,7 @@
 		E90350F51B987A9E0093C8E1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 261D953219BA287B0007FD28 /* SystemConfiguration.framework */; };
 		E90350F71B987AAC0093C8E1 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90350F61B987AAC0093C8E1 /* AssetsLibrary.framework */; };
 		E90350F91B987AB40093C8E1 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90350F81B987AB40093C8E1 /* Photos.framework */; };
+		E9DF7FCD1BB0C06E00EE9388 /* ETSPartner.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DF7FCC1BB0C06E00EE9388 /* ETSPartner.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -337,6 +338,9 @@
 		E90350F31B987A8B0093C8E1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		E90350F61B987AAC0093C8E1 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		E90350F81B987AB40093C8E1 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		E9DF7FCB1BB0C06E00EE9388 /* ETSPartner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSPartner.h; sourceTree = "<group>"; };
+		E9DF7FCC1BB0C06E00EE9388 /* ETSPartner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSPartner.m; sourceTree = "<group>"; };
+		E9DF7FCE1BB0C1E200EE9388 /* ETSMobile-2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ETSMobile-2.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -778,6 +782,8 @@
 				263770931831AFB200D18F94 /* ETSEvaluation.m */,
 				263AC8E718464D9F00AD5B21 /* ETSEvent.h */,
 				263AC8E818464D9F00AD5B21 /* ETSEvent.m */,
+				E9DF7FCB1BB0C06E00EE9388 /* ETSPartner.h */,
+				E9DF7FCC1BB0C06E00EE9388 /* ETSPartner.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1091,6 +1097,7 @@
 				26DEB88D18EC97EC00161421 /* MSEventCell.m in Sources */,
 				2664F1E618FF31360054BF58 /* ETSMenuTableViewHeader.m in Sources */,
 				262A6346182B3DDA00B786A0 /* ETSCourseDetailViewController.m in Sources */,
+				E9DF7FCD1BB0C06E00EE9388 /* ETSPartner.m in Sources */,
 				26B9A92818736265005D4410 /* ETSBandwidthViewController.m in Sources */,
 				269BFF561811A41C005D2950 /* NSManagedObject+SetValues.m in Sources */,
 				26D44BA518E49BEF0006F9F0 /* ETSBandwidth.m in Sources */,
@@ -1436,9 +1443,10 @@
 		26DD92C117EA610D00469FA8 /* ETSMobile.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				E9DF7FCE1BB0C1E200EE9388 /* ETSMobile-2.xcdatamodel */,
 				26DD92C217EA610D00469FA8 /* ETSMobile.xcdatamodel */,
 			);
-			currentVersion = 26DD92C217EA610D00469FA8 /* ETSMobile.xcdatamodel */;
+			currentVersion = E9DF7FCE1BB0C1E200EE9388 /* ETSMobile-2.xcdatamodel */;
 			path = ETSMobile.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
