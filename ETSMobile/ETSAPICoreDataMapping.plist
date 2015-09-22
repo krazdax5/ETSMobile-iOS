@@ -5,7 +5,7 @@
 	<key>Partner</key>
 	<dict>
 		<key>imageurl</key>
-		<string>imageurl</string>
+		<string>image_url</string>
 		<key>name</key>
 		<string>name</string>
 		<key>index</key>
