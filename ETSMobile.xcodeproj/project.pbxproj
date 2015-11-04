@@ -123,6 +123,11 @@
 		E90350F51B987A9E0093C8E1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 261D953219BA287B0007FD28 /* SystemConfiguration.framework */; };
 		E90350F71B987AAC0093C8E1 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90350F61B987AAC0093C8E1 /* AssetsLibrary.framework */; };
 		E90350F91B987AB40093C8E1 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90350F81B987AB40093C8E1 /* Photos.framework */; };
+		FB180BEE1BE99C0800087BE7 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB180BED1BE99C0800087BE7 /* NotificationCenter.framework */; };
+		FB180BF21BE99C0800087BE7 /* ETSTodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB180BF11BE99C0800087BE7 /* ETSTodayViewController.m */; };
+		FB180BF51BE99C0800087BE7 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB180BF31BE99C0800087BE7 /* MainInterface.storyboard */; };
+		FB180BF91BE99C0800087BE7 /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FB180BEC1BE99C0800087BE7 /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FB180C041BE9A12500087BE7 /* ETSTodayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB180C031BE9A12500087BE7 /* ETSTodayTableViewCell.m */; };
 		FB20EEFE1BD9AC30004961E3 /* ETSMobile-Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 262C233B1AF7FD9E00D28B85 /* ETSMobile-Config.xcconfig */; };
 		FB20EF041BD9C3F1004961E3 /* NSDate+Timezone.m in Sources */ = {isa = PBXBuildFile; fileRef = FB20EF031BD9C3F1004961E3 /* NSDate+Timezone.m */; };
 /* End PBXBuildFile section */
@@ -135,7 +140,28 @@
 			remoteGlobalIDString = 26DD92A317EA610D00469FA8;
 			remoteInfo = ETSMobile;
 		};
+		FB180BF71BE99C0800087BE7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26DD929C17EA610D00469FA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB180BEB1BE99C0800087BE7;
+			remoteInfo = Today;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FB180BFD1BE99C0800087BE7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FB180BF91BE99C0800087BE7 /* Today.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1D25DD8119A3C95900C71387 /* ETSNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsViewController.h; sourceTree = "<group>"; };
@@ -342,6 +368,14 @@
 		E90350F31B987A8B0093C8E1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		E90350F61B987AAC0093C8E1 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		E90350F81B987AB40093C8E1 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		FB180BEC1BE99C0800087BE7 /* Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB180BED1BE99C0800087BE7 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		FB180BF01BE99C0800087BE7 /* ETSTodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETSTodayViewController.h; sourceTree = "<group>"; };
+		FB180BF11BE99C0800087BE7 /* ETSTodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETSTodayViewController.m; sourceTree = "<group>"; };
+		FB180BF41BE99C0800087BE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		FB180BF61BE99C0800087BE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB180C021BE9A12500087BE7 /* ETSTodayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSTodayTableViewCell.h; sourceTree = "<group>"; };
+		FB180C031BE9A12500087BE7 /* ETSTodayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSTodayTableViewCell.m; sourceTree = "<group>"; };
 		FB20EF021BD9C3F1004961E3 /* NSDate+Timezone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Timezone.h"; sourceTree = "<group>"; };
 		FB20EF031BD9C3F1004961E3 /* NSDate+Timezone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Timezone.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -381,6 +415,14 @@
 				26DD92D517EA610D00469FA8 /* CoreData.framework in Frameworks */,
 				26DD92D417EA610D00469FA8 /* UIKit.framework in Frameworks */,
 				26DD92D317EA610D00469FA8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB180BE91BE99C0800087BE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB180BEE1BE99C0800087BE7 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,6 +702,7 @@
 				26DD92EB17EA615E00469FA8 /* Vendors */,
 				26DD92AF17EA610D00469FA8 /* ETSMobile */,
 				26DD92D817EA610D00469FA8 /* ETSMobileTests */,
+				FB180BEF1BE99C0800087BE7 /* Today */,
 				26DD92A617EA610D00469FA8 /* Frameworks */,
 				26DD92A517EA610D00469FA8 /* Products */,
 				A5F4825CB98F848CAC4733E5 /* Pods */,
@@ -671,6 +714,7 @@
 			children = (
 				26DD92A417EA610D00469FA8 /* ETSMobile.app */,
 				26DD92D017EA610D00469FA8 /* ETSMobileTests.xctest */,
+				FB180BEC1BE99C0800087BE7 /* Today.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -702,6 +746,7 @@
 				26DD92AD17EA610D00469FA8 /* CoreData.framework */,
 				26DD92D117EA610D00469FA8 /* XCTest.framework */,
 				2DE67BBDCCED00037D3BB48E /* libPods-ETSMobile.a */,
+				FB180BED1BE99C0800087BE7 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -929,6 +974,35 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
+		FB180BEF1BE99C0800087BE7 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				FB180C011BE9A0FE00087BE7 /* View */,
+				FB180C001BE9A0EA00087BE7 /* ViewController */,
+				FB180BF31BE99C0800087BE7 /* MainInterface.storyboard */,
+				FB180BF61BE99C0800087BE7 /* Info.plist */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		FB180C001BE9A0EA00087BE7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FB180BF01BE99C0800087BE7 /* ETSTodayViewController.h */,
+				FB180BF11BE99C0800087BE7 /* ETSTodayViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		FB180C011BE9A0FE00087BE7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB180C021BE9A12500087BE7 /* ETSTodayTableViewCell.h */,
+				FB180C031BE9A12500087BE7 /* ETSTodayTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -943,10 +1017,12 @@
 				262C23331AF7F23600D28B85 /* Run Script */,
 				31E251A031C034C9B1616A8E /* Copy Pods Resources */,
 				B6F6C5059214E1A723A2C71E /* Embed Pods Frameworks */,
+				FB180BFD1BE99C0800087BE7 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FB180BF81BE99C0800087BE7 /* PBXTargetDependency */,
 			);
 			name = ETSMobile;
 			productName = ETSMobile;
@@ -971,6 +1047,23 @@
 			productReference = 26DD92D017EA610D00469FA8 /* ETSMobileTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		FB180BEB1BE99C0800087BE7 /* Today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB180BFC1BE99C0800087BE7 /* Build configuration list for PBXNativeTarget "Today" */;
+			buildPhases = (
+				FB180BE81BE99C0800087BE7 /* Sources */,
+				FB180BE91BE99C0800087BE7 /* Frameworks */,
+				FB180BEA1BE99C0800087BE7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Today;
+			productName = Today;
+			productReference = FB180BEC1BE99C0800087BE7 /* Today.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -982,7 +1075,7 @@
 				ORGANIZATIONNAME = ApplETS;
 				TargetAttributes = {
 					26DD92A317EA610D00469FA8 = {
-						DevelopmentTeam = HZ746827JY;
+						DevelopmentTeam = N742HF354K;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -995,6 +1088,10 @@
 					26DD92CF17EA610D00469FA8 = {
 						TestTargetID = 26DD92A317EA610D00469FA8;
 					};
+					FB180BEB1BE99C0800087BE7 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = N742HF354K;
+					};
 				};
 			};
 			buildConfigurationList = 26DD929F17EA610D00469FA8 /* Build configuration list for PBXProject "ETSMobile" */;
@@ -1003,6 +1100,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				fr,
+				Base,
 			);
 			mainGroup = 26DD929B17EA610D00469FA8;
 			productRefGroup = 26DD92A517EA610D00469FA8 /* Products */;
@@ -1011,6 +1109,7 @@
 			targets = (
 				26DD92A317EA610D00469FA8 /* ETSMobile */,
 				26DD92CF17EA610D00469FA8 /* ETSMobileTests */,
+				FB180BEB1BE99C0800087BE7 /* Today */,
 			);
 		};
 /* End PBXProject section */
@@ -1045,6 +1144,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB180BEA1BE99C0800087BE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB180BF51BE99C0800087BE7 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1204,6 +1311,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FB180BE81BE99C0800087BE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB180C041BE9A12500087BE7 /* ETSTodayTableViewCell.m in Sources */,
+				FB180BF21BE99C0800087BE7 /* ETSTodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1211,6 +1327,11 @@
 			isa = PBXTargetDependency;
 			target = 26DD92A317EA610D00469FA8 /* ETSMobile */;
 			targetProxy = 26DD92D617EA610D00469FA8 /* PBXContainerItemProxy */;
+		};
+		FB180BF81BE99C0800087BE7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB180BEB1BE99C0800087BE7 /* Today */;
+			targetProxy = FB180BF71BE99C0800087BE7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1230,6 +1351,14 @@
 				2653785919CE7514002BC7AB /* fr */,
 			);
 			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		FB180BF31BE99C0800087BE7 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB180BF41BE99C0800087BE7 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1486,6 +1615,48 @@
 			};
 			name = Release;
 		};
+		FB180BFA1BE99C0800087BE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = Today/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.etsmtl.applets.ETSMobile.Today;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FB180BFB1BE99C0800087BE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = Today/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.etsmtl.applets.ETSMobile.Today;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1515,6 +1686,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		FB180BFC1BE99C0800087BE7 /* Build configuration list for PBXNativeTarget "Today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB180BFA1BE99C0800087BE7 /* Debug */,
+				FB180BFB1BE99C0800087BE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
