@@ -20,5 +20,6 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+- (NSURL *)applicationGroupDocumentsDirectory;
 
 @end

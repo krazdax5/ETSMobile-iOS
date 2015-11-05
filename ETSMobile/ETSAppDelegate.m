@@ -160,15 +160,40 @@
 // If the coordinator doesn't already exist, it is created and the application's store added to it.
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
+    BOOL needMigration = NO;
+    BOOL needCleanUp = NO;
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSString *dataBaseName = @"ETSMobile24042015.sqlite";
+    NSPersistentStore *store;
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:dataBaseName];
+    NSURL *groupURL = [[self applicationGroupDocumentsDirectory] URLByAppendingPathComponent:dataBaseName];
+    NSDictionary *migrationOptions = @{NSMigratePersistentStoresAutomaticallyOption: @YES,
+                                       NSInferMappingModelAutomaticallyOption: @YES};
+    NSURL *targetURL = nil;
+    NSError *error = nil;
     if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ETSMobile24042015.sqlite"];
+    if ([fm fileExistsAtPath:[storeURL path]]) {
+        needMigration = YES;
+        targetURL = storeURL;
+    }
     
-    NSError *error = nil;
+    if ([fm fileExistsAtPath:[groupURL path]]) {
+        needMigration = NO;
+        targetURL = groupURL;
+        if ([fm fileExistsAtPath:[storeURL path]]) {
+            needCleanUp = YES;
+        }
+    }
+    
+    if (!targetURL) {
+        targetURL = groupURL;
+    }
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    store = [_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:targetURL options:nil error:&error];
+    if (!store) {
         /*
          Replace this implementation with code to handle the error appropriately.
          
@@ -196,6 +221,26 @@
         abort();
     }    
     
+    if (needMigration) {
+        NSError *error = nil;
+        NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+        [context setPersistentStoreCoordinator:_persistentStoreCoordinator];
+        [_persistentStoreCoordinator migratePersistentStore:store toURL:groupURL options:migrationOptions withType:NSSQLiteStoreType error:&error];
+        if (error != nil) {
+            NSLog(@"Error while migrating data to the group url %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
+    
+    if (needCleanUp) {
+        NSError *error = nil;
+        [fm removeItemAtURL:storeURL error:&error];
+        if (error != nil) {
+            NSLog(@"Error while removing old database %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
+    
     return _persistentStoreCoordinator;
 }
 
@@ -205,6 +250,10 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+- (NSURL *)applicationGroupDocumentsDirectory {
+    return [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.ca.etsmtl.applets.ETSMobile"];
 }
 
 @end

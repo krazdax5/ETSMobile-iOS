@@ -23,15 +23,15 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ETSTodayCell" id="7h3-tB-wWb" customClass="ETSTodayTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ETSTodayCell" rowHeight="60" id="7h3-tB-wWb" customClass="ETSTodayTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7h3-tB-wWb" id="gb0-Kn-ueB">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dq8-Sy-cwC">
-                                                    <rect key="frame" x="4" y="0.0" width="153" height="20.5"/>
+                                                    <rect key="frame" x="8" y="10" width="153" height="20.5"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="153" id="DdX-GK-AK4"/>
@@ -41,37 +41,35 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heures" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoM-NI-EzR">
-                                                    <rect key="frame" x="4" y="21" width="153" height="20.5"/>
+                                                    <rect key="frame" x="8" y="32" width="153" height="20.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.68361420157068065" green="0.68361420157068065" blue="0.68361420157068065" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibz-CR-IdV">
-                                                    <rect key="frame" x="185" y="10.5" width="127" height="23"/>
+                                                    <rect key="frame" x="185" y="10" width="127" height="20.5"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="127" id="Hdw-82-4SB"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="FoM-NI-EzR" firstAttribute="leading" secondItem="gb0-Kn-ueB" secondAttribute="leadingMargin" constant="-4" id="3d0-OP-Ifu"/>
-                                                <constraint firstItem="dq8-Sy-cwC" firstAttribute="leading" secondItem="gb0-Kn-ueB" secondAttribute="leadingMargin" constant="-4" id="Unw-Qd-cV5"/>
-                                                <constraint firstItem="FoM-NI-EzR" firstAttribute="top" secondItem="dq8-Sy-cwC" secondAttribute="bottom" constant="1" id="amY-Y2-SPQ"/>
+                                                <constraint firstItem="FoM-NI-EzR" firstAttribute="leading" secondItem="gb0-Kn-ueB" secondAttribute="leadingMargin" id="3d0-OP-Ifu"/>
+                                                <constraint firstItem="dq8-Sy-cwC" firstAttribute="top" secondItem="gb0-Kn-ueB" secondAttribute="topMargin" constant="2" id="Gru-1l-7GL"/>
+                                                <constraint firstItem="dq8-Sy-cwC" firstAttribute="leading" secondItem="gb0-Kn-ueB" secondAttribute="leadingMargin" id="Unw-Qd-cV5"/>
                                                 <constraint firstItem="FoM-NI-EzR" firstAttribute="width" secondItem="dq8-Sy-cwC" secondAttribute="width" id="avw-CY-0ax"/>
+                                                <constraint firstItem="ibz-CR-IdV" firstAttribute="top" secondItem="gb0-Kn-ueB" secondAttribute="topMargin" constant="2" id="jxh-HK-dB3"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ibz-CR-IdV" secondAttribute="trailing" id="qb0-Os-JPB"/>
-                                                <constraint firstItem="ibz-CR-IdV" firstAttribute="centerY" secondItem="gb0-Kn-ueB" secondAttribute="centerY" id="wMr-8L-gq0"/>
+                                                <constraint firstItem="FoM-NI-EzR" firstAttribute="top" secondItem="dq8-Sy-cwC" secondAttribute="bottom" constant="1.5" id="zAv-XE-Msm"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <constraints>
-                                            <constraint firstItem="dq8-Sy-cwC" firstAttribute="top" secondItem="7h3-tB-wWb" secondAttribute="top" id="IWE-hM-97c"/>
-                                        </constraints>
                                         <connections>
                                             <outlet property="coursLabel" destination="dq8-Sy-cwC" id="Jg9-US-nAy"/>
                                             <outlet property="heuresLabel" destination="FoM-NI-EzR" id="eAA-wU-Hk2"/>
