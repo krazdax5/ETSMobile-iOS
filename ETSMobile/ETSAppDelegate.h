@@ -8,18 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "MSDynamicsDrawerViewController.h"
+#import "ETSDatabaseAccessController.h"
 
 @interface ETSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (strong, nonatomic) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 - (void)saveContext;
-- (NSURL *)applicationDocumentsDirectory;
-- (NSURL *)applicationGroupDocumentsDirectory;
 
 @end

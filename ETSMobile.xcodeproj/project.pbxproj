@@ -145,6 +145,8 @@
 		FB1C5CC31BEAF1B70043B5E3 /* NSDate+Timezone.m in Sources */ = {isa = PBXBuildFile; fileRef = FB20EF031BD9C3F1004961E3 /* NSDate+Timezone.m */; };
 		FB20EEFE1BD9AC30004961E3 /* ETSMobile-Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 262C233B1AF7FD9E00D28B85 /* ETSMobile-Config.xcconfig */; };
 		FB20EF041BD9C3F1004961E3 /* NSDate+Timezone.m in Sources */ = {isa = PBXBuildFile; fileRef = FB20EF031BD9C3F1004961E3 /* NSDate+Timezone.m */; };
+		FB472BB31BEC3BDE00B8A8BF /* ETSDatabaseAccessController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB472BB21BEC3BDE00B8A8BF /* ETSDatabaseAccessController.m */; };
+		FB472BB41BEC3BDE00B8A8BF /* ETSDatabaseAccessController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB472BB21BEC3BDE00B8A8BF /* ETSDatabaseAccessController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -394,6 +396,8 @@
 		FB1C5CC21BEAD1B30043B5E3 /* Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Today.entitlements; sourceTree = "<group>"; };
 		FB20EF021BD9C3F1004961E3 /* NSDate+Timezone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Timezone.h"; sourceTree = "<group>"; };
 		FB20EF031BD9C3F1004961E3 /* NSDate+Timezone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Timezone.m"; sourceTree = "<group>"; };
+		FB472BB11BEC3BDE00B8A8BF /* ETSDatabaseAccessController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSDatabaseAccessController.h; sourceTree = "<group>"; };
+		FB472BB21BEC3BDE00B8A8BF /* ETSDatabaseAccessController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSDatabaseAccessController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -489,6 +493,8 @@
 				2698C6F11827498800F6281F /* ETSAuthenticationViewController.m */,
 				2690F602183D088700FAD05A /* ETSWebViewViewController.h */,
 				2690F603183D088700FAD05A /* ETSWebViewViewController.m */,
+				FB472BB11BEC3BDE00B8A8BF /* ETSDatabaseAccessController.h */,
+				FB472BB21BEC3BDE00B8A8BF /* ETSDatabaseAccessController.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -1287,6 +1293,7 @@
 				26DEB88C18EC97EC00161421 /* MSDayColumnHeaderBackground.m in Sources */,
 				26BB373018F5E77E002CE5DD /* ETSCoursesViewController_iPad.m in Sources */,
 				26DD92C317EA610D00469FA8 /* ETSMobile.xcdatamodeld in Sources */,
+				FB472BB31BEC3BDE00B8A8BF /* ETSDatabaseAccessController.m in Sources */,
 				264E86D0188796A7005F1820 /* NSURL+Document.m in Sources */,
 				263A4C4C188B14A800E38CAC /* NSString+HTML.m in Sources */,
 				26634D8D1881F2FF00644FFB /* ETSLoginView.m in Sources */,
@@ -1345,6 +1352,7 @@
 				FB1C5CBB1BEACF150043B5E3 /* ETSProgram.m in Sources */,
 				FB1C5CC11BEACF150043B5E3 /* ETSEvent.m in Sources */,
 				FB1C5CB71BEACF150043B5E3 /* ETSNews.m in Sources */,
+				FB472BB41BEC3BDE00B8A8BF /* ETSDatabaseAccessController.m in Sources */,
 				FB1C5CC31BEAF1B70043B5E3 /* NSDate+Timezone.m in Sources */,
 				FB1C5CBE1BEACF150043B5E3 /* ETSCourse.m in Sources */,
 				FB1C5CBF1BEACF150043B5E3 /* ETSProfile.m in Sources */,
