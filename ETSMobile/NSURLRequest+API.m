@@ -33,6 +33,7 @@
     [request setValue:@"UTF-8" forHTTPHeaderField:@"Accept-Charset"];
     [request setCachePolicy: NSURLRequestReloadIgnoringCacheData];
     
+    NSLog(@"Request body %@", [[NSString alloc] initWithData:[request HTTPBody] encoding:NSUTF8StringEncoding]);
     return request;
 }
 
@@ -120,8 +121,14 @@
     
     NSError *error = nil;
     [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:kNilOptions error:&error]];
+    NSLog(@"Request body %@", [[NSString alloc] initWithData:[request HTTPBody] encoding:NSUTF8StringEncoding]);
     
     return request;
+}
+
++ (id)requestForEvalEnseignement
+{
+    return [self requestWithUsernameAndPassword:[NSURL URLForEvalEnseignement]];
 }
 
 + (id)requestForDirectory
@@ -180,9 +187,9 @@
     return request;
 }
 
-+ (id)requestForBandwidthWithMonth:(NSString *)month residence:(NSString *)residence phase:(NSString *)phase
++ (id)requestForBandwidthWithResidence:(NSString *)residence phase:(NSString *)phase
 {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForBandwidthWithMonth:month residence:residence phase:phase]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForBandwidthWithResidence:residence phase:phase]];
     
     [request setHTTPMethod: @"GET"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
@@ -191,5 +198,38 @@
     [request setCachePolicy: NSURLRequestReloadIgnoringCacheData];
     return request;
 }
+
++ (id)requestForSponsors
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForSponsors]];
+    
+    [request setHTTPMethod: @"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"UTF-8" forHTTPHeaderField:@"Accept-Charset"];
+    [request setCachePolicy: NSURLRequestReloadIgnoringCacheData];
+    
+   /* NSData * data = [NSURLConnection sendSynchronousRequest:request
+                                          returningResponse:nil
+                                                      error:nil];
+    
+    if (data != nil)
+    {
+        NSDictionary * sponsorDictionary = [NSJSONSerialization JSONObjectWithData:data
+                                                                           options:NSJSONReadingMutableContainers
+                                                                             error:nil];
+        if (sponsorDictionary != nil)
+        {
+            NSLog(@"%@", [sponsorDictionary description]);
+        }
+    }*/
+    
+    return request;
+}
+
+
+
+
+
 
 @end

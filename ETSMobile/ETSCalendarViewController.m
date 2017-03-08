@@ -9,6 +9,8 @@
 #import "ETSCalendarViewController.h"
 #import "NSURLRequest+API.h"
 #import "MSCollectionViewCalendarLayout.h"
+#import "RKDropdownAlert.h"
+#import "UIColor+Styles.h"
 
 #import "MSGridline.h"
 #import "MSTimeRowHeaderBackground.h"
@@ -18,6 +20,7 @@
 #import "MSTimeRowHeader.h"
 #import "MSCurrentTimeIndicator.h"
 #import "MSCurrentTimeGridline.h"
+#import "UIScrollView+EmptyDataSet.h"
 
 #import "ETSCalendar.h"
 #import "ETSSession.h"
@@ -26,11 +29,13 @@
 #import "ETSMenuViewController.h"
 #import "ETSUniversityCalendarViewController.h"
 
+#import <Crashlytics/Crashlytics.h>
+
 NSString * const MSEventCellReuseIdentifier = @"MSEventCellReuseIdentifier";
 NSString * const MSDayColumnHeaderReuseIdentifier = @"MSDayColumnHeaderReuseIdentifier";
 NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifier";
 
-@interface ETSCalendarViewController () <MSCollectionViewDelegateCalendarLayout, NSFetchedResultsControllerDelegate, ETSSynchronizationDelegate, ETSAuthenticationViewControllerDelegate>
+@interface ETSCalendarViewController () <MSCollectionViewDelegateCalendarLayout, NSFetchedResultsControllerDelegate, ETSSynchronizationDelegate, ETSAuthenticationViewControllerDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource>
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 @property (nonatomic, strong) MSCollectionViewCalendarLayout *collectionViewCalendarLayout;
 @property (strong, nonatomic) ETSSynchronization *synchronizationSession;
@@ -51,7 +56,9 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     
     self.collectionViewCalendarLayout = (MSCollectionViewCalendarLayout *)self.collectionViewLayout;
     self.collectionViewCalendarLayout.delegate = self;
-    self.collectionViewCalendarLayout.hourHeight = 40;
+    self.collectionViewCalendarLayout.hourHeight = 50;
+    self.collectionView.emptyDataSetDelegate = self;
+    self.collectionView.emptyDataSetSource = self;
     
     self.dateFormatter = [[NSDateFormatter alloc] init];
     self.dateFormatter.dateStyle = NSDateFormatterLongStyle;
@@ -88,7 +95,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:[NSDate date]];
     NSDate *today = [calendar dateFromComponents:components];
-    
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"start >= %@", today];
     
     // Divide into sections by the "day" key path
@@ -110,6 +116,21 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
             [self.navigationController presentViewController:navigationController animated:NO completion:nil];
         }
     }
+}
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
+{
+    NSString *text = @"Vous semblez ne pas avoir d'horaire.";
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
+                                 NSForegroundColorAttributeName: [UIColor blackColor]};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
+{
+    return [UIImage imageNamed:@"Calendar"];
 }
 
 - (NSArray *)activeSessions
@@ -180,6 +201,11 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     self.synchronizations = synchronizations;
 }
 
+- (void)synchronizationDidFinishLoadingWithErrors:(NSString *)error {
+    
+    [RKDropdownAlert title:@"Erreur" message:error backgroundColor:[UIColor naviguationBarTintColor] textColor:[UIColor whiteColor] time:3];
+}
+
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveResponse:(ETSSynchronizationResponse)response
 {
     
@@ -229,10 +255,17 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Calendar"
+                        contentType:@"Calendar"
+                          contentId:@"ETS-Calendar"
+                   customAttributes:@{}];
+    
     [self.synchronizationSession synchronize:nil];
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:YES animated:animated];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated

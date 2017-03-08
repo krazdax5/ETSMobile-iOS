@@ -15,11 +15,16 @@
 #import "NSURLRequest+API.h"
 #import "ETSCourseDetailViewController.h"
 #import "ETSMenuViewController.h"
+#import "ETSAppDelegate.h"
+#import "NotificationHelper.h"
 #import <QuartzCore/QuartzCore.h>
+
+#import <Crashlytics/Crashlytics.h>
 
 @interface ETSCoursesViewController ()
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSIndexPath *lastSelectedIndexPath;
+@property (strong, nonatomic) NSMutableDictionary *courseResults; // Temporary results (on 100%) are saved here.
 @end
 
 @implementation ETSCoursesViewController
@@ -29,7 +34,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    NotificationHelper *myNotificationHelper = [NotificationHelper sharedInstance];
+    if (myNotificationHelper.courseId != nil) {
+        [self performSegueWithIdentifier:@"showDetailViewSegue" sender:self];
+    }
+    
+    if (self.courseResults == nil) {
+        self.courseResults = [[NSMutableDictionary alloc] initWithCapacity:4];
+    }
     self.title =  NSLocalizedString(@"Notes", nil);
     
     self.cellIdentifier = @"CourseIdentifier";
@@ -48,11 +61,19 @@
         ac.delegate = self;
         [self.navigationController pushViewController:ac animated:NO];
     }
+    
+    [ETSAppDelegate setUpPushNotifications];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Courses notes"
+                        contentType:@"Courses"
+                          contentId:@"ETS-Courses"
+                   customAttributes:@{}];
+    
     if (self.lastSelectedIndexPath) {
         [self configureCell:[self.collectionView cellForItemAtIndexPath:self.lastSelectedIndexPath] atIndexPath:self.lastSelectedIndexPath];
     }
@@ -95,9 +116,16 @@
     if ([course.grade length] > 0) {
         courseCell.gradeLabel.text = course.grade;
     }
-    else if ([course.resultOn100 floatValue] > 0 && [[course totalEvaluationWeighting] floatValue]) {
+    // If we comeback from a course detail view, get the result on 100%. Save it in the courseResults dictionnary
+    // and print it in the cell.
+    else if (([course.resultOn100 floatValue] > 0 && [[course totalEvaluationWeighting] floatValue])
+             || [self.courseResults objectForKey:(NSString *) course.acronym] != nil) {
         NSNumber *percent = @([course.resultOn100 floatValue]/[[course totalEvaluationWeighting] floatValue]*100);
-        courseCell.gradeLabel.text = [NSString stringWithFormat:@"%lu %%", (long)[percent integerValue]];
+        if ([percent integerValue] > 0) {
+            [self.courseResults setValue:(NSNumber *)percent forKey:(NSString *) course.acronym];
+        }
+        courseCell.gradeLabel.text = [NSString stringWithFormat:@"%lu %%",
+                                      (long)[[self.courseResults valueForKey:(NSString *)course.acronym] integerValue]];
     } else {
         courseCell.gradeLabel.text = @"—";
     }
@@ -144,9 +172,36 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     ETSCourseDetailViewController *vc = [segue destinationViewController];
-    vc.course = [self.fetchedResultsController objectAtIndexPath:[self.collectionView indexPathsForSelectedItems][0]];
+    
+    // Always get a fresh fetchedResultsController before changing context.
+    self.fetchedResultsController = nil;
+    self.fetchedResultsController = [self fetchedResultsController];
+    
+    NotificationHelper *myNotificationHelper = [NotificationHelper sharedInstance];
+    if (myNotificationHelper.courseId != nil) {
+        NSArray *fetchedData = [self.fetchedResultsController fetchedObjects];
+        
+        for (ETSCourse *course in fetchedData) {
+            if ([course.id isEqualToString:myNotificationHelper.courseId]) {
+                vc.course = course;
+                break;
+            }
+        }
+    }
+    
+    else {
+        vc.course = [self.fetchedResultsController objectAtIndexPath:[self.collectionView indexPathsForSelectedItems][0]];
+    }
+    
     vc.managedObjectContext = self.managedObjectContext;
-    self.lastSelectedIndexPath = [self.collectionView indexPathsForSelectedItems][0];
+    
+    if (myNotificationHelper.courseId != nil) {
+        myNotificationHelper.courseId = nil;
+    }
+    else {
+        self.lastSelectedIndexPath = [self.collectionView indexPathsForSelectedItems][0];
+    }
+    
 }
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject

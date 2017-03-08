@@ -7,7 +7,7 @@
 	<key>ApplETSUsername</key>
 	<string>${ApplETSUsername}</string>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>fr_CA</string>
+	<string>fr</string>
 	<key>CFBundleDisplayName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleExecutable</key>
@@ -15,7 +15,7 @@
 	<key>CFBundleIcons~ipad</key>
 	<dict/>
 	<key>CFBundleIdentifier</key>
-	<string>ca.etsmtl.applets.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -23,14 +23,14 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0.3</string>
+	<string>2.0.7</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>11</string>
+	<string>22</string>
 	<key>Fabric</key>
 	<dict>
-		<key>APIKey</key>
+        <key>APIKey</key>
 		<string>c0781ea7e44d8e3e63d49409f062972e1302609a</string>
 		<key>Kits</key>
 		<array>
@@ -44,12 +44,67 @@
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>amazonaws.com</key>
+            <dict>
+                <key>NSThirdPartyExceptionMinimumTLSVersion</key>
+                <string>TLSv1.0</string>
+                <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                <false/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+            </dict>
+            <key>amazonaws.com.cn</key>
+            <dict>
+                <key>NSThirdPartyExceptionMinimumTLSVersion</key>
+                <string>TLSv1.0</string>
+                <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                <false/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+            </dict>
+        </dict>
+	</dict>
+	<key>SupportKitApiKey</key>
+	<string>${SUPPORTKIT_API_KEY}</string>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>ico_notes</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Notes</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.etsmobile.opennotes</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>Calendar</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Horaire</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.etsmobile.opencalendar</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>ico_internet</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Bande Passante</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.etsmobile.openbandwidth</string>
+		</dict>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string>Launch_Screen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main_iPhone</string>
 	<key>UIMainStoryboardFile~ipad</key>
@@ -58,6 +113,10 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
+	<key>UIStatusBarHidden</key>
+	<false/>
 	<key>UIStatusBarTintParameters</key>
 	<dict>
 		<key>UINavigationBar</key>
@@ -81,5 +140,34 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+    
+    <key>AWS</key>
+    <dict>
+        <key>CredentialsProvider</key>
+        <dict>
+            <key>CognitoIdentity</key>
+            <dict>
+                <key>Default</key>
+                <dict>
+                    <key>PoolId</key>
+                    <string>us-east-1:f7b54ec0-4106-47dd-b6e8-ecd60aac78eb</string>
+                    <key>Region</key>
+                    <string>USEast1</string>
+                </dict>
+            </dict>
+        </dict>
+        <key>SNS</key>
+        <dict>
+            <key>Default</key>
+            <dict>
+                <key>Region</key>
+                <string>USEast1</string>
+            </dict>
+        </dict>
+    </dict>
+    
+    
 </dict>
 </plist>

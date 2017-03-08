@@ -10,10 +10,15 @@
 #import "NSURLRequest+API.h"
 #import "ETSEvaluation.h"
 #import "ETSEvaluationCell.h"
+#import "UIScrollView+EmptyDataSet.h"
+#import "ETSSession.h"
+#import <Crashlytics/Crashlytics.h>
 
-@interface ETSCourseDetailViewController ()
+@interface ETSCourseDetailViewController () <DZNEmptyDataSetDelegate, DZNEmptyDataSetSource>
+
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @property (nonatomic, strong) NSNumberFormatter *formatter;
+@property (nonatomic, strong) NSNumberFormatter *formatterPourcent;
 @property (nonatomic, strong) UIBarButtonItem *coursesBarButtonItem;
 @property (nonatomic, assign) BOOL hadResults;
 @end
@@ -50,11 +55,72 @@
     self.formatter.minimumFractionDigits = 1;
     self.formatter.minimumIntegerDigits = 1;
     
+    _formatterPourcent = [[NSNumberFormatter alloc] init];
+    [_formatterPourcent setNumberStyle:NSNumberFormatterPercentStyle];
+    [_formatterPourcent setMaximumFractionDigits:0];
+    [_formatterPourcent setMultiplier:@1];
+    
+    self.formatterPourcent.formatterBehavior = NSNumberFormatterPercentStyle;
+    
     [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
     
     self.title = self.course.acronym;
     
+    self.tableView.emptyDataSetDelegate = self;
+    self.tableView.emptyDataSetSource = self;
+    
     self.hadResults = [[self.fetchedResultsController sections][0] numberOfObjects] > 0;
+}
+
+- (NSAttributedString *)titleforEvaluationNotCompleted: (UIScrollView *)scrollView
+{
+    NSString *text = @"Veuillez compléter l'évaluation de ce cours avant de pouvoir accéder à vos notes";
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
+                                 NSForegroundColorAttributeName: [UIColor blackColor]};
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
+{
+    NSString *text = @"Aucune note disponible pour le moment.";
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
+                                 NSForegroundColorAttributeName: [UIColor blackColor]};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
+{
+    return [UIImage imageNamed:@"ico_notes"];
+}
+
+- (NSArray *)activeSessions
+{
+    NSMutableArray *sessions = [NSMutableArray array];
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Session"];
+    NSDate *now = [NSDate date];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"end >= %@", now];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"start" ascending:YES]];
+    fetchRequest.returnsDistinctResults = YES;
+    fetchRequest.propertiesToFetch = @[@"acronym"];
+    
+    NSArray *results = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    for (ETSSession *session in results) {
+        [sessions addObject:session.acronym];
+    }
+    return sessions;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Courses notes details"
+                        contentType:@"Courses"
+                          contentId:@"ETS-Courses-Details"
+                   customAttributes:@{}];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -140,7 +206,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) return 44;
-    else return 146;
+    else return 171;
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
@@ -148,16 +214,21 @@
     if (indexPath.section == 1) {
         ETSEvaluation *evaluation = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
         ((ETSEvaluationCell *)cell).nameLabel.text = evaluation.name;
-        ((ETSEvaluationCell *)cell).resultLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:evaluation.result], [self.formatter stringFromNumber:evaluation.total]];
-        ((ETSEvaluationCell *)cell).meanLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:evaluation.mean], [self.formatter stringFromNumber:evaluation.total]];
-        ((ETSEvaluationCell *)cell).medianLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:evaluation.median], [self.formatter stringFromNumber:evaluation.total]];
+        NSNumber *percentResult = @([evaluation.result floatValue]/[evaluation.total floatValue]*100);
+        ((ETSEvaluationCell *)cell).resultLabel.text = [NSString stringWithFormat:@"%@/%@ (%@)", [self.formatter stringFromNumber:evaluation.result], [self.formatter stringFromNumber:evaluation.total], [self.formatterPourcent stringFromNumber:percentResult]];
+        NSNumber *percentMean = @([evaluation.mean floatValue]/[evaluation.total floatValue]*100);
+        ((ETSEvaluationCell *)cell).meanLabel.text = [NSString stringWithFormat:@"%@", [self.formatterPourcent stringFromNumber:percentMean]];
+        NSNumber *percentMedian = @([evaluation.median floatValue]/[evaluation.total floatValue]*100);
+        ((ETSEvaluationCell *)cell).medianLabel.text = [NSString stringWithFormat:@"%@", [self.formatterPourcent stringFromNumber:percentMedian]];
         ((ETSEvaluationCell *)cell).stdLabel.text = [self.formatter stringFromNumber:evaluation.std];
         ((ETSEvaluationCell *)cell).percentileLabel.text = [self.formatter stringFromNumber:evaluation.percentile];
+        ((ETSEvaluationCell *)cell).weightingLabel.text = [NSString stringWithFormat:@"%@", [self.formatterPourcent stringFromNumber:evaluation.weighting]];
     }
     else {
         if (indexPath.row == 0 && self.hadResults > 0) {
                 cell.textLabel.text = NSLocalizedString(@"Note à ce jour", nil);
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:self.course.resultOn100], [self.formatter stringFromNumber:[self.course totalEvaluationWeighting]]];
+                NSNumber *percentNote = @([self.course.resultOn100 floatValue]/[self.course.totalEvaluationWeighting floatValue]*100);
+                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@ (%@)", [self.formatter stringFromNumber:self.course.resultOn100], [self.formatter stringFromNumber:[self.course totalEvaluationWeighting]], [self.formatterPourcent stringFromNumber:percentNote]];
         }
         else if (indexPath.row == 0 && self.hadResults == 0) {
             cell.textLabel.text = NSLocalizedString(@"Cote au dossier", nil);
@@ -165,7 +236,8 @@
         }
         else if (indexPath.row == 1) {
             cell.textLabel.text = NSLocalizedString(@"Moyenne du groupe", nil);
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:self.course.mean], [self.formatter stringFromNumber:[self.course totalEvaluationWeighting]]];
+            NSNumber *percentMoyenne = @([self.course.mean floatValue]/[self.course.totalEvaluationWeighting floatValue]*100);
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@ (%@)", [self.formatter stringFromNumber:self.course.mean], [self.formatter stringFromNumber:[self.course totalEvaluationWeighting]], [self.formatterPourcent stringFromNumber:percentMoyenne]];
         }
         else if (indexPath.row == 2) {
             cell.textLabel.text = NSLocalizedString(@"Médiane", nil);
@@ -195,13 +267,26 @@
     self.course.std         = [self.formatter numberFromString:results[@"ecartTypeClasse"]];
     self.course.median      = [self.formatter numberFromString:results[@"medianeClasse"]];
     self.course.percentile  = [self.formatter numberFromString:results[@"rangCentileClasse"]];
-    [self.course.managedObjectContext save:nil];
+    // NSManagedObjectContext can be nil (Apple Documentation).
+    // Need to check for that before using the object.
+    if (self.course.managedObjectContext != nil) {
+        NSError *error;
+        [self.course.managedObjectContext save:&error];
+        if (error != nil) {
+            NSLog(@"Unresolved error: %@", error);
+        }
+    }
 }
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
     ETSEvaluation *evaluation = (ETSEvaluation *)managedObject;
-    evaluation.course = (ETSCourse *)[evaluation.managedObjectContext objectWithID:[self.course objectID]];
+    NSError *error;
+//    evaluation.course = (ETSCourse *)[evaluation.managedObjectContext objectWithID:[self.course objectID]];
+    evaluation.course = (ETSCourse *)[evaluation.managedObjectContext existingObjectWithID:[self.course objectID] error:&error];
+    if (error != nil) {
+        NSLog(@"Unresolved error: %@", error);
+    }
     evaluation.ignored = [object[@"ignoreDuCalcul"] isEqualToString:@"Non"] ? @NO : @YES;
 }
 

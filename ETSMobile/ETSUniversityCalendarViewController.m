@@ -9,6 +9,8 @@
 #import "ETSUniversityCalendarViewController.h"
 #import "ETSEvent.h"
 
+#import <Crashlytics/Crashlytics.h>
+
 @interface ETSUniversityCalendarViewController ()
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 @end
@@ -52,7 +54,19 @@ NSString * const ETSUniversityCalendarSource = @"ets";
     self.cellIdentifier = @"EventIdentifier";
     
     self.dateFormatter = [NSDateFormatter new];
-    self.dateFormatter.dateStyle = NSDateFormatterMediumStyle;
+    self.dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr_CA"];
+    [self.dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    self.dateFormatter.dateFormat = @"EEEE d MMMM";
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"University calendar"
+                        contentType:@"Calendar"
+                          contentId:@"ETS-University-Calendar"
+                   customAttributes:@{}];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -96,17 +110,22 @@ NSString * const ETSUniversityCalendarSource = @"ets";
                                                fromDate:event.start
                                                  toDate:event.end
                                                 options:0];
+    
+    //Detail label
     if (components.day < 2) {
         cell.detailTextLabel.text = [NSString stringWithFormat:@"Le %@", [self.dateFormatter stringFromDate:event.start]];
     } else {
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"Du %@ au %@", [self.dateFormatter stringFromDate:event.start], [self.dateFormatter stringFromDate:event.end]];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Du %@ au %@", [self.dateFormatter stringFromDate:event.start], [self.dateFormatter stringFromDate:[event.end dateByAddingTimeInterval:-1]]];
     }
+    
+    //Urgent date verification
     NSDate *now = [NSDate date];
     if ([now compare:event.start] == NSOrderedDescending && [now compare:event.end] == NSOrderedAscending) {
         cell.backgroundColor = [UIColor colorWithRed:176/255.0f green:0 blue:16/255.0f alpha:0.05];
     } else {
         cell.backgroundColor = [UIColor whiteColor];
     }
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

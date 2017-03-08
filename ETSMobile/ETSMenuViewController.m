@@ -17,6 +17,7 @@
 #import "ETSSecurityViewController.h"
 #import "ETSDirectoryViewController.h"
 #import "ETSMoodleCoursesViewController.h"
+#import "SupportKit/SupportKit.h"
 
 NSString * const kStoryboardAuthenticationViewController = @"AuthenticationViewController";
 NSString * const ETSMenuCellReuseIdentifier = @"MenuCell";
@@ -66,6 +67,7 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
                                            @(ETSPaneViewControllerTypeCourses)      : NSLocalizedString(@"Notes", nil),
                                            @(ETSPaneViewControllerTypeDirectory)    : NSLocalizedString(@"Bottin", nil),
                                            @(ETSPaneViewControllerTypeLibrary)      : NSLocalizedString(@"Bibliothèque", nil),
+                                           @(ETSPaneViewControllerTypeMonets)       : NSLocalizedString(@"Mon ÉTS", nil),
                                            @(ETSPaneViewControllerTypeMoodle)       : NSLocalizedString(@"Moodle", nil),
                                            @(ETSPaneViewControllerTypeNews)         : NSLocalizedString(@"Actualités", nil),
                                            @(ETSPaneViewControllerTypeProfile)      : NSLocalizedString(@"Profil", nil),
@@ -82,6 +84,7 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
                                            @(ETSPaneViewControllerTypeCourses)      : [UIImage imageNamed:@"ico_notes"],
                                            @(ETSPaneViewControllerTypeDirectory)    : [UIImage imageNamed:@"ico_bottin"],
                                            @(ETSPaneViewControllerTypeLibrary)      : [UIImage imageNamed:@"ico_library"],
+                                           @(ETSPaneViewControllerTypeMonets)       : [UIImage imageNamed:@"ico_monets"],
                                            @(ETSPaneViewControllerTypeMoodle)       : [UIImage imageNamed:@"ico_moodle"],
                                            @(ETSPaneViewControllerTypeNews)         : [UIImage imageNamed:@"ico_news"],
                                            @(ETSPaneViewControllerTypeProfile)      : [UIImage imageNamed:@"ico_profil"],
@@ -98,6 +101,7 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
                                            @(ETSPaneViewControllerTypeCourses)      : @"CoursesViewController",
                                            @(ETSPaneViewControllerTypeDirectory)    : @"DirectoryViewController",
                                            @(ETSPaneViewControllerTypeLibrary)      : @"WebViewController",
+                                           @(ETSPaneViewControllerTypeMonets)       : @"MonetsWebViewController",
                                            @(ETSPaneViewControllerTypeMoodle)       : @"MoodleViewController",
                                            @(ETSPaneViewControllerTypeNews)         : @"NewsViewController",
                                            @(ETSPaneViewControllerTypeProfile)      : @"ProfileViewController",
@@ -118,7 +122,7 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
 {
     switch (section) {
         case 0: return 5;
-        case 1: return 5;
+        case 1: return 6;
         case 2: return 3;
         default: return 0;
     }
@@ -151,7 +155,7 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(ETSMenuTableViewHeader *)view forSection:(NSInteger)section
 {
     // Cette fonction est un petit hack pour iOS 8 qui ne supporte pas la fonction load de ETSMenuTableViewHeader.
-    view.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:12];
+    view.textLabel.font =  [UIFont systemFontOfSize:12];
     view.textLabel.textColor = [UIColor menuLabelColor];
 }
 
@@ -179,6 +183,7 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ETSPaneViewControllerType paneViewControllerType = [self paneViewControllerTypeForIndexPath:indexPath];
+    
     [self transitionToViewController:paneViewControllerType];
     
     // Prevent visual display bug with cell dividers
@@ -193,8 +198,13 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
 
 - (void)transitionToViewController:(ETSPaneViewControllerType)paneViewControllerType
 {
+    // SupportKit opening
+    if (paneViewControllerType == ETSPaneViewControllerTypeComment) {
+        [SupportKit showConversation];
+    }
+    
     // Close pane if already displaying the pane view controller
-    if (paneViewControllerType == self.paneViewControllerType) {
+    if (paneViewControllerType == ETSPaneViewControllerTypeComment) {
         [self.dynamicsDrawerViewController setPaneState:MSDynamicsDrawerPaneStateClosed animated:YES allowUserInterruption:YES completion:nil];
         return;
     }
@@ -207,6 +217,9 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
     
     if (paneViewControllerType == ETSPaneViewControllerTypeLibrary)
         ((ETSWebViewViewController *)((UINavigationController *)paneViewController).topViewController).request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://ets.mbiblio.ca"]];
+    
+    if (paneViewControllerType == ETSPaneViewControllerTypeMonets)
+        ((ETSWebViewViewController *)((UINavigationController *)paneViewController).topViewController).request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://portail.etsmtl.ca"]];
     
     if ([paneViewController respondsToSelector:@selector(setManagedObjectContext:)])
         [paneViewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
