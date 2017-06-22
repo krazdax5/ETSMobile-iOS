@@ -34,7 +34,7 @@ class AppRequest : NSObject, WCSessionDelegate {
     override init() {
         if WCSession.isSupported() {
             self.supported = true
-            self.session = WCSession.default()
+            self.session = WCSession.default
         } else {
             self.supported = false
             self.session = nil

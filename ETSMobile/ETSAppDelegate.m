@@ -81,7 +81,7 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
         UIApplicationShortcutItem *shortcutItem = [launchOptions objectForKey:UIApplicationLaunchOptionsShortcutItemKey];
         if (shortcutItem == nil) {
             menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
-        [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
+            [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
         }
         else {
             [self openViewController:menuViewController withString:shortcutItem.localizedTitle];
@@ -98,7 +98,7 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.dynamicsDrawerViewController;
     [self.window makeKeyAndVisible];
-
+    
     // Crashlytics
     [Fabric with:@[CrashlyticsKit]];
     
